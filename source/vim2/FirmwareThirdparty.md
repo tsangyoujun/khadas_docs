@@ -25,6 +25,8 @@ title: Khadas VIM2 Third Party Firmware
 **Volumio image built by balbes150, thanks balbes150.**
 * [Image download](https://yadi.sk/d/xbesnjYG3PETk5)
 * [Forum topic](http://forum.khadas.com/t/volumio-for-khadas/1437)
+* [Khadas Install (Chinese)](https://forum.khadas.com/t/vims-volumio/2244)
+* Volumio is headless (no screen output), look for the "Volumio" WiFi Hotspot, to set it up.
 
 ## ArchLinux
 **ArchLinux image built by balbes150, thanks balbes150.**
