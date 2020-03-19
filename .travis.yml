@@ -17,9 +17,13 @@ scrpit:
 before_install:
   - npm install hexo-cli -g
 
+install:
+  - npm install
+  - npm rebuild node-sass --force
+
 deploy:
   provider: script
   script: .travis/deploy.sh
-  skip_cleanup: true
+  skip_cleanup: false
   on:
     branch: master
