@@ -71,6 +71,10 @@ $ make board-deb
 ```
 $ make debs
 ```
+### Build Uboot Image
+```
+$ make uboot-image
+```
 
 ### Get Help Messages
 You can get help messags by executing `make help`:
@@ -81,6 +85,7 @@ Fenix scripts help messages:
   kernel        - Build linux kernel.
   uboot         - Build u-boot.
   uboot-deb     - Build u-boot debian package.
+  uboot-image   - Build minimal image only with u-boot.
   kernel-deb    - Build linux debian package.
   board-deb     - Build board debian package.
   common-deb    - Build common debian package.
@@ -92,6 +97,29 @@ Fenix scripts help messages:
   info          - Display current environment.
 ```
 
+### Build Options
+
+Trere are some options for building:
+
+* `NO_CCACHE` - ccache option
+
+  * Enable ccache (default)
+    * NO_CCACHE=no make
+  * Disable ccache
+    * NO_CCACHE=yes make
+
+* `COMPRESS_IMAGE` - compress build image option
+  * Don't compress (default)
+    * COMPRESS_IMAGE=no make
+  * Compress image with xz
+    * COMPRESS_IMAGE=yes make
+
+* `BUILD_TYPE` - image build type option
+  * Develop build
+    * BUILD_TYPE=develop make
+  * Release build
+    * BUILD_TYPE=release make
+
 ### Build Fenix in Docker
 
 Fenix is supported via Docker. We provide a `Ubuntu 20.04` build host, so you can build all images in Docker.
@@ -99,6 +127,14 @@ Fenix is supported via Docker. We provide a `Ubuntu 20.04` build host, so you ca
 #### Install Docker
 
 Please refer to [Docker Official Documentation](https://docs.docker.com/engine/install/).
+
+#### Add User to Docker Group
+
+```
+$ sudo usermod -aG docker $USER
+```
+
+*Note: You need to logout or reboot the system to make it available.*
 
 #### Check Docker
 ```
@@ -135,15 +171,21 @@ For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
 ```
 #### Run Fenix in Docker
-Build Docker Image:
+Get Docker Image:
 ```
 $ cd ~/project/fenix
-$ docker build -t fenix .
+$ docker pull numbqq/fenix:latest
 ```
 
 Build Image in Docker:
 ```
-$ docker run -it --name fenix -v $(pwd):/home/khadas/fenix -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro --privileged --device=/dev/loop0:/dev/loop0 --cap-add SYS_ADMIN fenix
+$ docker run -it --name fenix -v $(pwd):/home/khadas/fenix \
+             -v /etc/localtime:/etc/localtime:ro \
+             -v /etc/timezone:/etc/timezone:ro \
+             -v $HOME/.ccache:/home/khadas/.ccache --privileged \
+             --device=/dev/loop-control:/dev/loop-control \
+             --device=/dev/loop0:/dev/loop0 --cap-add SYS_ADMIN \
+             numbqq/fenix
 ```
 We are in the Docker Container now, start your build.
 ```
@@ -157,6 +199,12 @@ To restart the Docker container a second time.
 $ docker start fenix
 $ docker exec -ti fenix bash
 ```
+
+### Get The Latest Night Build Image
+- Visit [Fenix](https://github.com/khadas/fenix)(one-stop script)
+- Click on the badge like Release Build,Test Build Ubuntu,Test Build Debian
+![image](/images/vim1/FenixScript.png)
+- You can see the firmware page when you click on the latest workflow
 
 ### See Also
 [Docker](https://www.docker.com/)

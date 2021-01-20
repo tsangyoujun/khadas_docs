@@ -11,9 +11,8 @@ This is a guide for building the boot-up logo on Amlogic platforms (may be diffe
 ### Preparations
 Before you begin, you'll need a bootup picture with the following specs:
 
-* BMP format, should be either:
+* BMP format, should be:
   * 16bit RGB565 BMP format
-  * 24bit RGB888 BMP format
 * Resolution <= 1080P (1920 * 1080)
 
 Check the bmp file:
@@ -86,7 +85,7 @@ $
 $ cp images/logo.img /media/gouwa/9B98-6C15/
 ```
 
-**2)** Insert the thumbdrive into your VIM, then boot into [U-Boot mode](https://docs.khadas.com/vim1/SetupSerialTool.html).
+**2)** Insert the thumbdrive into your VIM, then boot into [U-Boot mode](/vim1/SetupSerialTool.html).
 
 **3)** Update logo partition as new `logo.img`:
 ```sh

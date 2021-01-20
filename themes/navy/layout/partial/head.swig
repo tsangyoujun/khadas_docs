@@ -31,8 +31,7 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="/vendor/semantic/dist/semantic.min.css">
   <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"
     crossorigin="anonymous"></script>
   <script src="/vendor/semantic/dist/semantic.min.js"></script>
  <!-- Hotjar Tracking Code for https://docs.khadas.com -->
@@ -51,7 +50,7 @@
   {{ css('css/navy') }}
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/font/fontawesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
   <!-- RSS -->
   {{ feed_tag('atom.xml') }}

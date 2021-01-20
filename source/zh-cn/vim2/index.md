@@ -59,7 +59,32 @@ title: VIM2 文档
 ||常亮|板子处于开机状态|
 |红灯|None|None|
 
-上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系统都不同）编程的更多信息可通过[forum.khadas.com](forum.khadas)咨询。
+上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系统都不同）编程的更多信息可通过[forum.khadas.com](https://forum.khadas.com)咨询。
+
+## GPIO管脚映射
+
+SIGNAL| PIN|PIN|SIGNAL
+---|:---|:---|:---
+5V|1|21|GND
+5V|2|22|I2C_SCK_A
+HUB_DM1|3|23|I2C_SDA_A
+HUB_DP1|4|24|GND
+GND|5|25|I2C_SCK_B
+GPIODV_21|6|26|I2C_SDA_B
+GPIODV_22|7|27|3.3V
+GPIODV_23|8|28|GND
+GND|9|29|I2S_SCLK
+ADC_CH0|10|30|I2S_MCLK
+1.8V|11|31|I2S_SDO
+ADC_CH2|12|32|I2S_LRCK
+SPDIF|13|33|I2S_SDI
+GND|14|34|GND
+UART_RX_AO_B|15|35|PWM_D
+UART_TX_AO_B|16|36|RTC_CLK
+GND|17|37|GPIOH_5
+Linux_RX|18|38|EXP_INT
+Linux_TX|19|39|GPIODV_13
+3.3V|20|40|GND
 
 # Krescue (Khadas-Rescue-OS)
 ![image](/images/docs_krescue_online_install.jpg)
@@ -151,7 +176,7 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 * 为了从**sd/usb images**启动，您需要在您的emmc上运行android或ubuntu，并激活多启动。
 
 # 使用Type-C升级EMMC系统
-如果您想使用笔记本电脑或台式电脑升级存储在EMMC存储器中的VIM2 SBC操作系统，则需要这些项目。例如，将启>动操作系统从android改为ubuntu，或者安装更具特色的第三方操作系统。
+如果您想使用笔记本电脑或台式电脑升级存储在EMMC存储器中的VIM2 SBC操作系统，则需要这些项目。例如，将启动操作系统从android改为ubuntu，或者安装更具特色的第三方操作系统。
 
 1. 常见Tpye-C数据线 (传统PC)
 2. 两头Type-C的数据线 (现代PC)
@@ -169,7 +194,7 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 * [Third Party OSes](/zh-cn/vim2/FirmwareThirdparty.html)
 
 # 观看电影，扩展内部emmc存储
-如果您希望将VIM2 SBC用作媒体中心，用于存储/下载大型电影文件，这些项目非常有用。一个microDXC的UHS-I卡>很贵，但它的速度也足以支持4K视频播放。此外，您还可以连接外部USB-2.0 SSD或HDD以存储整个媒体库。
+如果您希望将VIM2 SBC用作媒体中心，用于存储/下载大型电影文件，这些项目非常有用。一个microDXC的UHS-I卡很贵，但它的速度也足以支持4K视频播放。此外，您还可以连接外部USB-2.0 SSD或HDD以存储整个媒体库。
 
 1. 不小于64GB的USB-2.0 HDD/SSD
 2. 不小于64GB的*microSDXC UHS-I* SD-Card

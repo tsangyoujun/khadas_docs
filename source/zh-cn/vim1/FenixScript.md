@@ -52,6 +52,7 @@ $ make kernel
 ### 编译内核debian包
 ```
 $ make kernel-deb
+```
 
 ### 编译GPU debian包
 ```
@@ -68,6 +69,11 @@ $ make board-deb
 $ make debs
 ```
 
+### 编译uboot image
+```
+$ make uboot-image
+```
+
 ### 获取帮助信息
 通过执行`make help`来获取帮助信息。
 ```sh
@@ -77,6 +83,7 @@ Fenix scripts help messages:
   kernel        - Build linux kernel.
   uboot         - Build u-boot.
   uboot-deb     - Build u-boot debian package.
+  uboot-image   - Build minimal image only with u-boot.
   kernel-deb    - Build linux debian package.
   board-deb     - Build board debian package.
   common-deb    - Build common debian package.
@@ -88,12 +95,46 @@ Fenix scripts help messages:
   info          - Display current environment.
 ```
 
+### 编译选项
+
+* `NO_CCACHE` - ccache选项
+
+  * 使能ccache（默认）
+    * NO_CCACHE=no make
+  * 禁止ccache
+    * NO_CCACHE=yes make
+
+* `COMPRESS_IMAGE` - 压缩固件选项
+  * 不压缩（默认）
+    * COMPRESS_IMAGE=no make
+  * 压缩固件
+    * COMPRESS_IMAGE=yes make
+
+* `BUILD_TYPE` - 编译类型选项
+  * Develop
+    * BUILD_TYPE=develop make
+  * Release
+    * BUILD_TYPE=release make
+
+* `DOWNLOAD_MIRROR` - 源地址选项
+  * 使用国内源
+    * DOWNLOAD_MIRROR=china make
+
+
 ### 使用Docker编译
 Fenix支持在Docker中编译，我们提供了一个`Ubuntu 20.04`的Docker环境，你可以在里面编译所有的固件。
 
 #### 安装Docker
 
 请参考[Docker官方安装文档](https://docs.docker.com/engine/install/)。
+
+#### 添加用户到Docker组
+
+```
+$ sudo usermod -aG docker $USER
+```
+
+*注意：你需要注销或重启系统来使其生效。*
 
 #### 检查Docker
 ```
@@ -130,15 +171,21 @@ For more examples and ideas, visit:
  https://docs.docker.com/engine/userguide/
 ```
 #### 在Docker中运行Fenix
-编译Docker镜像：
+获取Docker镜像：
 ```
 $ cd ~/project/fenix
-$ docker build -t fenix .
+$ docker pull numbqq/fenix:latest
 ```
 
 进入Docker环境：
 ```
-$ docker run -it --name fenix -v $(pwd):/home/khadas/fenix -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro --privileged --device=/dev/loop0:/dev/loop0 --cap-add SYS_ADMIN fenix
+$ docker run -it --name fenix -v $(pwd):/home/khadas/fenix \
+             -v /etc/localtime:/etc/localtime:ro \
+             -v /etc/timezone:/etc/timezone:ro \
+             -v $HOME/.ccache:/home/khadas/.ccache --privileged \
+             --device=/dev/loop-control:/dev/loop-control \
+             --device=/dev/loop0:/dev/loop0 --cap-add SYS_ADMIN \
+             numbqq/fenix
 ```
 现在已经在Docker容器里面了，可以开始编译了：
 ```
@@ -152,6 +199,12 @@ khadas@919cab43f66d:~/fenix$ make
 $ docker start fenix
 $ docker exec -ti fenix bash
 ```
+
+### 获取最新的nightly build固件
+- 访问[Fenix](https://github.com/khadas/fenix)脚本
+- 点击下面的badge,如:Rlease Build,Test Build Ubuntu,Test Build Debian
+![image](/images/vim1/FenixScript.png)
+- 点击最新的workflow就可以看到固件下载页面了
 
 ### 参考
 [Docker](https://www.docker.com/)

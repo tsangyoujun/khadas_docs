@@ -16,8 +16,8 @@ $ cd acuity-toolkit-binary-5.0.0/conversion_scripts/
 ### 0_import_model.sh
 
 参数设置
-> 1. `NAME` 设置为yolov3
-> 2. `--net-input` yolov3-voc.cfg文件位置
+> 1. `NAME` 设置为yolovX
+> 2. `--net-input` yolovX-voc.cfg文件位置
 > 3. `--weight-input` weights文件位置
 例如:
 > `NAME=yolov3`
@@ -27,7 +27,7 @@ $ cd acuity-toolkit-binary-5.0.0/conversion_scripts/
 ### 1_quantize_model.sh
 
 参数设置
-> 1. `NAME` 设置为yolov3
+> 1. `NAME` 设置为yolovX
 > 2. `--source-file` 检验文件
 > 3. `--channel-mean-value` 设置成`0 0 0 256`
 > 4. `--quantized-dtype` 设置成`dynamic_fixed_point-8`
@@ -40,7 +40,7 @@ $ cd acuity-toolkit-binary-5.0.0/conversion_scripts/
 ### 2_export_case_code.sh
 
 参数设置
-> 1. `NAME` 设置为yolov3
+> 1. `NAME` 设置为yolovX
 > 2. `--reorder-channel` RGB的颜色通道顺序修改为BGR`2 1 0`
 > 3. `--channel-mean-value` 设置为`0 0 0 256`
 > 4. `--export-dtype` 设置为`quantized`
@@ -93,12 +93,12 @@ $ cd workspace/aml_npu_app/DDK_6.3.3.4/detect_library/model_code/detect_yolo_v3/
 
 ```
 ```bash
-$ vim yolov3_process.c
+$ vim yolovX_process.c
 ```
 修改3个位置
 1. `*coco_names[]` 的内容修改为你训练的模型的class，顺序要和你训练时的.names文件一致。
 2. `num_class`  的值修改为你训练的class的大小
-3. `size[3]` 的最后一个参数修改为`num_class*3`
+3. `size[3]` 的最后一个参数修改为`(num_class+5)*3`
 
 例如:
 > 1. `*coco_names[] = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat", "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair", "sofa", "pottedplant", "bed", "diningtable", "toilet", "tvmonitor", "laptop", "mouse", "remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush", "Edge-V", "Edge", "VIM1", "VIM2", "VIM3", "VIM3L", "Fan3705", "Captain", "Captain+Edge", "ToneBoard", "Heatsink(VIMs)", "Heatsink(Edge)];`

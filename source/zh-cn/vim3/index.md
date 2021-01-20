@@ -22,7 +22,7 @@ title: VIM3 相关文档
 |C|RTC电池接口|硬件时钟电池的接口|
 |D|[40脚的GPIO](/zh-cn/vim3/GPIOPinout.html)|可用于控制[GPIO](vim3/HowToAccessGpio.html)或者与[toneboard](https://www.khadas.com/product-page/tone-board)连接|
 |E|GPIO扩展芯片|为VIM3拓展可用的GPIO|
-|F|[MCU](https://docs.khadas.com/vim3/KbiGuidance.html)|可编程的EEPROM阵列的STM8S003微控制器|
+|F|[MCU](/vim3/KbiGuidance.html)|可编程的EEPROM阵列的STM8S003微控制器|
 |G|WOL选择开关|WOL功能的电源开关|
 |H|红外模块|可用于与[khadas遥控器](https://www.khadas.com/product-page/ir-remote)通信|
 |I|LED灯|用于指示板子的状态|
@@ -39,7 +39,7 @@ title: VIM3 相关文档
 |4|M.2接口|PCIE2.0接口(x1 lane),支持[M.2 2280 NVME固态硬盘](/zh-cn/vim3/ListOfCompatibleNVMeSSDs.html)|
 |5|TP|10脚0.5mm间距FTP接口|
 |6|[MIPI-DSI接口](/zh-cn/vim3/ConnectLcd.html)|30脚0.5mm间距的FPC接口,可用于连接[TS050触控屏](https://www.khadas.com/product-page/ts050-touchscreen)|
-|7|MIPI-DSI接口|30脚，0.5mm间距，4通道，双摄像头，8MP图像信号处理|
+|7|MIPI-CSI接口|30脚，0.5mm间距，4通道，双摄像头，8MP图像信号处理|
 |8|[SPI Flash](/zh-cn/vim3/BootFromSpiFlash.html)|通过SPI控制的Flash模块|
 |9|XPWR焊盘|用于连接使用外部电源|
 |A|M寄存器|可在任何情况下,强制EMMC进入[MaskROM模式](/zh-cn/vim3/HowtoBootIntoUpgradeMode.html)|
@@ -64,7 +64,7 @@ title: VIM3 相关文档
 ||常亮|板子处于开机状态|
 |红灯|None|None|
 
-上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系>统都不同）编程的更多信息可通过[forum.khadas.com](forum.khadas)咨询。
+上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系>统都不同）编程的更多信息可通过[forum.khadas.com](https://forum.khadas.com)咨询。
 
 # VIM3L
 
@@ -87,7 +87,7 @@ title: VIM3 相关文档
 |C|RTC电池接口|硬件时钟电池的接口|
 |D|[40脚的GPIO](/zh-cn/vim3/GPIOPinout.html)|可用于控制GPIO(vim3/HowToAccessGpio.html)或者与[toneboard](https://www.khadas.com/product-page/tone-board)连接|
 |E|GPIO扩展芯片|为VIM3拓展可用的GPIO|
-|F|[MCU](https://docs.khadas.com/vim3/KbiGuidance.html)|可编程的EEPROM阵列的STM8S003微控制器|
+|F|[MCU](/vim3/KbiGuidance.html)|可编程的EEPROM阵列的STM8S003微控制器|
 |G|WOL选择开关|WOL功能的电源开关|
 |H|红外模块|可用于与[khadas遥控器](https://www.khadas.com/product-page/ir-remote)通信|
 |I|LED灯|用于指示板子的状态|
@@ -104,7 +104,7 @@ title: VIM3 相关文档
 |4|M.2接口|PCIE2.0接口(x1 lane),支持[M.2 2280 NVME固态硬盘](/zh-cn/vim3/ListOfCompatibleNVMeSSDs.html)|
 |5|TP|10脚0.5mm间距FTP接口|
 |6|[MIPI-DSI接口](/zh-cn/vim3/ConnectLcd.html)|30脚0.5mm间距的FPC接口,可用于连接[TS050触控屏](https://www.khadas.com/product-page/ts050-touchscreen)|
-|7|MIPI-DSI接口|30脚，0.5mm间距，4通道，双摄像头，8MP图像信号处理|
+|7|MIPI-CSI接口|30脚，0.5mm间距，4通道，双摄像头，8MP图像信号处理|
 |8|[SPI Flash](/zh-cn/vim3/BootFromSpiFlash.html)|通过SPI控制的Flash模块|
 |9|XPWR焊盘|用于连接使用外部电源|
 |A|M寄存器|可在任何情况下,强制EMMC进入[MaskROM模式](/zh-cn/vim3/HowtoBootIntoUpgradeMode.html)|
@@ -129,7 +129,32 @@ title: VIM3 相关文档
 ||常亮|板子处于开机状态|
 |红灯|None|None|
 
-上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系>统都不同）编程的更多信息可通过[forum.khadas.com](forum.khadas)咨询。
+上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系>统都不同）编程的更多信息可通过[forum.khadas.com](https://forum.khadas.com)咨询。
+
+## GPIO管脚映射
+
+SIGNAL| PIN|PIN|SIGNAL
+---|:---|:---|:---
+5V|1|21|GND
+5V|2|22|I2C_M3_SCL
+USB_DM|3|23|I2C_M3_SDA
+USB_DP|4|24|GND
+GND|5|25|I2C_AO_SCK
+VCC_MCU|6|26|I2C_AO_SDA
+MCU_NRST|7|27|3.3V
+MCU_SWIM|8|28|GND
+GND|9|29|I2SB_SCLK
+ADC_CH0|10|30|I2S_MCLK0
+1.8V|11|31|I2SB_SDO
+ADC_CH3|12|32|I2SB_LRCK
+SPDIF_OUT|13|33|I2SB_SDI
+GND|14|34|GND
+UARTC_RX|15|35|PWM_F
+UARTC_TX|16|36|RTC_CLK
+GND|17|37|GPIOH_4
+Linux_RX|18|38|MCU_PA1
+Linux_TX|19|39|GPIODZ_15
+3.3V|20|40|GND
 
 # Krescue (Khadas-Rescue-OS)
 ![image](/images/docs_krescue_online_install.jpg)
@@ -140,7 +165,7 @@ title: VIM3 相关文档
 - 将EMMC的中的内容通过[SD卡](https://dl.khadas.com/Firmware/Krescue/dump/image2sd.readme.txt),[USB存储设备](https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-usb-otg-mode-disks.txt)或者[网络](https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-http-disks.txt)备份。
 - 从其他设备或者网络覆写img.gz格式的固件到EMMC
 - 通过网络直接安装系统
-- 查看硬件谁设备信息
+- 查看硬件设备信息
 - 给有专业知识的用户准备的应急shell
 - 通过串口，USB网络接口或者网络接口使用[shell访问](https://dl.khadas.com/Firmware/Krescue/dump/README-rescue-access.txt)系统。
 

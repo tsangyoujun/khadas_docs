@@ -1,84 +1,87 @@
 vim1:
   getting_started:
-    overview: index.html
+    overview: index.html#Back-Red
     vim1_interfaces: VimInterfaces.html
+    how_to_connect_wifi: HowToConnectWifi.html
+    how_to_setup_bluetooth: HowToSetupBluetooth.html
+    add_chinese_support: AddChineseSupport.html
     enter_upgrade_mode: HowtoBootIntoUpgradeMode.html
     upgrade_via_usb: UpgradeViaUSBCable.html
     upgrade_via_tfcard: UpgradeViaTFBurningCard.html
-    install_libreelec: InstallLibreELEC.html
-    create_burning_card_via_cli: CreateBurnCardViaCLI.html
-    create_booting_card: CreateBootableSDCard.html
-    booting_card_vs_burning_card: BootingCardVsBurningCard.html
     boot_from_ext_image: BootFromExtMedia.html
     extra_power_input: ExtraPowerInput.html
-    gpio_pinout: GPIOPinout.html
+  Accessories:
+    how_to_setup_fan: HowToSetupFan.html
   development:
-    install_toolchains: InstallToolchains.html
+    create_burning_card_via_cli: CreateBurnCardViaCLI.html
+    create_booting_card: CreateBootableSDCard.html
     setup_serial: SetupSerialTool.html
     erase_emmc: HowtoEraseEMMC.html
     how_to_access_gpio: HowToAccessGpio.html
     how_to_access_i2c: HowToAccessI2c.html
-    how_to_install_adb_tool: HowToInstallADBTool.html
   uboot:
     uboot_usage: UBootUsage.html
     build_boot_logo_for_uboot: BuildBootLogoForUboot.html
     setup_tftp: SetupTFTPServer.html
     load_image_via_tftp: LoadImagesWithUBootViaTFTP.html
   android:
+    install_toolchains: InstallToolchains.html
     download_android_source_code: DownloadAndroidSourceCode.html
     build_android: BuildAndroid.html
     package_update_image: FastPackageUpdateImage.html
-    setup_adb: SetupADB.html
+    how_to_use_adb_tool: HowToUseADBTool.html
   linux:
     fenix_script: FenixScript.html
+    how_to_upgrade_the_system: HowToUpgradeTheSystem.html
     krescue: Krescue.html
-    how_to_connect_wifi: HowToConnectWifi.html
-    how_to_setup_bluetooth: HowToSetupBluetooth.html
-    bluetooth_instructions: BluetoothInstructions.html
     how_to_setup_watchdog: HowToSetupWatchdog.html
-    add_chinese_support: AddChineseSupport.html
-    install_tensorflow: InstallTensorFlow.html
     install_docker: InstallDocker.html
-    setup_golang: SetupGolang.html
-    enable_adb: HowtoEnableAdb.html
     how_to_use_wiringpi: HowToUseWiringPi.html
     how_to_use_wiringpi-python: HowToUseWiringPi-Python.html
     how_to_use_rpigpio: HowToUseRPiGPIO.html
     how_to_upgrade_the_logo: HowToUpgradeTheLogo.html
     how_to_upgrade_the_uboot: HowToUpgradeTheUboot.html
     how_to_upgrade_the_kernel: HowToUpgradeTheKernel.html
-  hardware:
-    download: HardwareDocs.html
-    extra: HardwareExtra.html
-  firmware:
-    android_image: FirmwareAndroid.html
-    ubuntu_image: FirmwareUbuntu.html
-    libreelec_image: FirmwareLibreelec.html
-    dualos_image: FirmwareDualos.html
-    uboot_image: FirmwareUboot.html
-    thirdparty_image: FirmwareThirdparty.html
+    how_to_use_hardware_pwm: HowToUseHardwarePWM.html
+    how_to_use_uart: HowToUseUart.html
+    how_to_control_LED: HowToControlLED.html
+    how_to_test_gpio_irq: HowToTestGPIOIRQ.html
+    how_to_set_auto_login: HowToSetAutoLogin.html
+    how_to_use_1-Wire: HowToUse1wire.html
+    how_to_setup_HDMI: HowToSetupHDMI.html
+    how_to_change_logo: HowToChangeBootLogo.html
+    how_to_custom_MAC: HowToCustomMac.html
+    how_to_use_dtbo: HowToUseDeviceTreeOverlay.html
+    how_to_custom_IR_code_to_boot: HowToCustomIRCodeToBoot.html
+    how_to_setup_fb_font: HowToSetupFramebufferConsoleFont.html
+    how_to_write_SD_image_to_eMMC: HowToWriteSDImageToEmmc.html
+    how_to_use_hardware_decoding_library: HowToUseHardwareDecodingLibrary.html
+    how_to_use_hardware_encoding_library: HowToUseHardwareEncodingLibrary.html
+    how_to_run_32-bit_applications_on_64-bit_system: HowToRun32-bitApplicationsOn64-bitSystem.html
+    how_to_configure_Wi-Fi_to_work_in_STA+AP_mode: HowToConfigureWi-FiToWorkInSTA+APMode.html
 
 vim2:
   getting_started:
     overview: index.html
     vim2_interfaces: Vim2Interfaces.html
+    how_to_connect_wifi: HowToConnectWifi.html
+    how_to_setup_bluetooth: HowToSetupBluetooth.html
+    add_chinese_support: AddChineseSupport.html
     enter_upgrade_mode: HowtoBootIntoUpgradeMode.html
     upgrade_via_usb: UpgradeViaUSBCable.html
     upgrade_via_tfcard: UpgradeViaTFBurningCard.html
-    install_libreelec: InstallLibreELEC.html
-    create_burning_card_via_cli: CreateBurnCardViaCLI.html
-    create_booting_card: CreateBootableSDCard.html
-    booting_card_vs_burning_card: BootingCardVsBurningCard.html
     boot_from_ext_image: BootFromExtMedia.html
     extra_power_input: ExtraPowerInput.html
-    gpio_pinout: GPIOPinout.html
+  Accessories:
+    how_to_setup_fan: HowToSetupFan.html
   development:
-    install_toolchains: InstallToolchains.html
+    create_burning_card_via_cli: CreateBurnCardViaCLI.html
+    create_booting_card: CreateBootableSDCard.html
     setup_serial: SetupSerialTool.html
     erase_emmc: HowtoEraseEMMC.html
     how_to_access_gpio: HowToAccessGpio.html
     how_to_access_i2c: HowToAccessI2c.html
-    how_to_install_adb_tool: HowToInstallADBTool.html
+    howto_use_wol: HowtoUseWol.html
   uboot:
     uboot_usage: UBootUsage.html
     build_boot_logo_for_uboot: BuildBootLogoForUboot.html
@@ -86,74 +89,79 @@ vim2:
     load_image_via_tftp: LoadImagesWithUBootViaTFTP.html
     kbi_guidance: KbiGuidance.html
   android:
+    install_toolchains: InstallToolchains.html
     download_android_source_code: DownloadAndroidSourceCode.html
     build_android: BuildAndroid.html
     package_update_image: FastPackageUpdateImage.html
-    setup_adb: SetupADB.html
-    howto_use_wol: HowtoUseWol.html
+    how_to_use_adb_tool: HowToUseADBTool.html
     force_reset_features: ForceResetFeatures.html 
   linux:
     fenix_script: FenixScript.html
+    how_to_upgrade_the_system: HowToUpgradeTheSystem.html
     krescue: Krescue.html
-    how_to_connect_wifi: HowToConnectWifi.html
-    how_to_setup_bluetooth: HowToSetupBluetooth.html
-    bluetooth_instructions: BluetoothInstructions.html
     how_to_setup_watchdog: HowToSetupWatchdog.html
-    add_chinese_support: AddChineseSupport.html
-    how_to_setup_fan: HowToSetupFan.html
-    install_tensorflow: InstallTensorFlow.html
     install_docker: InstallDocker.html
-    setup_golang: SetupGolang.html
-    enable_adb: HowtoEnableAdb.html
     how_to_use_wiringpi: HowToUseWiringPi.html
     how_to_use_wiringpi-python: HowToUseWiringPi-Python.html
     how_to_use_rpigpio: HowToUseRPiGPIO.html
     how_to_upgrade_the_logo: HowToUpgradeTheLogo.html
     how_to_upgrade_the_uboot: HowToUpgradeTheUboot.html
     how_to_upgrade_the_kernel: HowToUpgradeTheKernel.html
+    how_to_use_hardware_pwm: HowToUseHardwarePWM.html
+    how_to_use_uart: HowToUseUart.html
+    how_to_control_LED: HowToControlLED.html
+    how_to_test_gpio_irq: HowToTestGPIOIRQ.html
+    how_to_set_auto_login: HowToSetAutoLogin.html
+    how_to_use_1-Wire: HowToUse1wire.html
+    how_to_setup_HDMI: HowToSetupHDMI.html
+    how_to_change_logo: HowToChangeBootLogo.html
+    how_to_custom_MAC: HowToCustomMac.html
+    how_to_use_dtbo: HowToUseDeviceTreeOverlay.html
+    how_to_custom_IR_code_to_boot: HowToCustomIRCodeToBoot.html
+    how_to_setup_fb_font: HowToSetupFramebufferConsoleFont.html
+    how_to_write_SD_image_to_eMMC: HowToWriteSDImageToEmmc.html
+    how_to_use_hardware_decoding_library: HowToUseHardwareDecodingLibrary.html
+    how_to_use_hardware_encoding_library: HowToUseHardwareEncodingLibrary.html
+    how_to_run_32-bit_applications_on_64-bit_system: HowToRun32-bitApplicationsOn64-bitSystem.html
+    how_to_configure_Wi-Fi_to_work_in_STA+AP_mode: HowToConfigureWi-FiToWorkInSTA+APMode.html
   fuchsia:
     build_fuchsia: BuildFuchsia.html
-  hardware:
-    download: HardwareDocs.html
-    extra: HardwareExtra.html
-  firmware:
-    android_image: FirmwareAndroid.html
-    ubuntu_image: FirmwareUbuntu.html
-    libreelec_image: FirmwareLibreelec.html
-    dualos_image: FirmwareDualos.html
-    uboot_image: FirmwareUboot.html
-    thirdparty_image: FirmwareThirdparty.html
 
 vim3:
   getting_started:
     overview: index.html
     vim3_interfaces: Vim3Interfaces.html
+    how_to_connect_wifi: HowToConnectWifi.html
+    how_to_setup_bluetooth: HowToSetupBluetooth.html
+    add_chinese_support: AddChineseSupport.html
     enter_upgrade_mode: HowtoBootIntoUpgradeMode.html
     upgrade_via_usb: UpgradeViaUSBCable.html
     upgrade_via_tfcard: UpgradeViaTFBurningCard.html
-    install_libreelec: InstallLibreELEC.html
-    create_burning_card_via_cli: CreateBurnCardViaCLI.html
-    create_booting_card: CreateBootableSDCard.html
-    booting_card_vs_burning_card: BootingCardVsBurningCard.html
     boot_from_ext_image: BootFromExtMedia.html
     extra_power_input: ExtraPowerInput.html
-    gpio_pinout: GPIOPinout.html
+  Accessories:
+    how_to_setup_fan: HowToSetupFan.html
     connect_lcd: ConnectLcd.html
-    list_of_compatible_nvme_ssd: ListOfCompatibleNVMeSSDs.html
+    HowToUseMPICamera: HowToUseMIPICamera.html
+    how_to_use_lte_module: HowToUseLTEModule.html
+    how_to_enable_M2X_ETH_through_overlays: HowToEnableM2XETHThroughOverlays.html
   development:
-    install_toolchains: InstallToolchains.html
+    create_burning_card_via_cli: CreateBurnCardViaCLI.html
+    create_booting_card: CreateBootableSDCard.html
     setup_serial: SetupSerialTool.html
     erase_emmc: HowtoEraseEMMC.html
     how_to_access_gpio: HowToAccessGpio.html
     how_to_access_i2c: HowToAccessI2c.html
+    howto_use_wol: HowtoUseWol.html
     how_to_setup_pcie_usb_port: HowToSetupPcieUsbPort.html
-    how_to_install_adb_tool: HowToInstallADBTool.html
   npu:
-    how_to_use_npu: HowToUseNpu.html
-    how_to_install_darknet: HowToInstallDarknet.html
-    how_to_train_yolo: HowToTrainYolo.html
-    how_to_transform_yolo: HowToTransformYolo.html
-    how_to_train_inception: HowToTrainInception.html
+    how_to_run_npu_demo: HowToRunNPUDemo.html
+    npu_sdk_description: HowToUseNPUSDK.html
+    aml_npu_app_description: HowToUseAmlNPUApp.html
+    run_yourself_AI_with_npu: HowToConvertToUseNPU.html
+    how_to_use_AMLNNApi: HowToUseAMLNNApi.html
+    how_to_use_Tengine_SDK: HowToUseTengineSDK.html
+    how_to_use_Tengine_app: HowToUseTengineApp.html
   uboot:
     boot_from_spi_flash: BootFromSpiFlash.html
     uboot_usage: UBootUsage.html
@@ -162,39 +170,42 @@ vim3:
     load_image_via_tftp: LoadImagesWithUBootViaTFTP.html
     kbi_guidance: KbiGuidance.html
   android:
+    install_toolchains: InstallToolchains.html
     download_android_source_code: DownloadAndroidSourceCode.html
     build_android: BuildAndroid.html
     package_update_image: FastPackageUpdateImage.html
-    setup_adb: SetupADB.html
-    howto_use_wol: HowtoUseWol.html
+    how_to_use_adb_tool: HowToUseADBTool.html
+    how_to_use_fastboot: HowToUseFastboot.html
   linux:
     fenix_script: FenixScript.html
+    how_to_upgrade_the_system: HowToUpgradeTheSystem.html
     krescue: Krescue.html
-    how_to_connect_wifi: HowToConnectWifi.html
-    how_to_setup_bluetooth: HowToSetupBluetooth.html
     how_to_setup_watchdog: HowToSetupWatchdog.html
-    bluetooth_instructions: BluetoothInstructions.html
-    add_chinese_support: AddChineseSupport.html
-    install_tensorflow: InstallTensorFlow.html
     install_docker: InstallDocker.html
-    setup_golang: SetupGolang.html
-    enable_adb: HowtoEnableAdb.html
     how_to_use_wiringpi: HowToUseWiringPi.html
     how_to_use_wiringpi-python: HowToUseWiringPi-Python.html
     how_to_use_rpigpio: HowToUseRPiGPIO.html
     how_to_upgrade_the_logo: HowToUpgradeTheLogo.html
     how_to_upgrade_the_uboot: HowToUpgradeTheUboot.html
     how_to_upgrade_the_kernel: HowToUpgradeTheKernel.html
-  hardware:
-    download: HardwareDocs.html
-    extra: HardwareExtra.html
-  firmware:
-    android_image: FirmwareAndroid.html
-    ubuntu_image: FirmwareUbuntu.html
-    libreelec_image: FirmwareLibreelec.html
-    dualos_image: FirmwareDualos.html
-    uboot_image: FirmwareUboot.html
-    thirdparty_image: FirmwareThirdparty.html
+    how_to_use_hardware_pwm: HowToUseHardwarePWM.html
+    how_to_use_uart: HowToUseUart.html
+    how_to_control_LED: HowToControlLED.html
+    how_to_test_gpio_irq: HowToTestGPIOIRQ.html
+    how_to_set_auto_login: HowToSetAutoLogin.html
+    how_to_use_1-Wire: HowToUse1wire.html
+    how_to_setup_HDMI: HowToSetupHDMI.html
+    how_to_setup_max_cpu_freq: HowToSetupMaxCPUFrequency.html
+    how_to_change_logo: HowToChangeBootLogo.html
+    how_to_custom_MAC: HowToCustomMac.html
+    how_to_use_dtbo: HowToUseDeviceTreeOverlay.html
+    how_to_custom_IR_code_to_boot: HowToCustomIRCodeToBoot.html
+    how_to_setup_fb_font: HowToSetupFramebufferConsoleFont.html
+    how_to_write_SD_image_to_eMMC: HowToWriteSDImageToEmmc.html
+    how_to_use_hardware_decoding_library: HowToUseHardwareDecodingLibrary.html
+    how_to_use_hardware_encoding_library: HowToUseHardwareEncodingLibrary.html
+    how_to_run_32-bit_applications_on_64-bit_system: HowToRun32-bitApplicationsOn64-bitSystem.html
+    how_to_configure_Wi-Fi_to_work_in_STA+AP_mode: HowToConfigureWi-FiToWorkInSTA+APMode.html
 
 edge:
   getting_started:
@@ -203,70 +214,66 @@ edge:
     captain_interfaces: CaptainInterfaces.html
     edgev_interfaces: EdgeVInterfaces.html
     edgecaptain_power_priority: EdgeCaptainPowerPriority.html
+    how_to_connect_wifi: HowToConnectWifi.html
+    how_to_setup_bluetooth: HowToSetupBluetooth.html
+    add_chinese_support: AddChineseSupport.html
     enter_upgrade_mode: HowtoBootIntoUpgradeMode.html
     upgrade_via_usb: UpgradeViaUSBCable.html
     upgrade_via_tfcard: UpgradeViaTFBurningCard.html
-    captain_gpio_pinout: CaptainGPIOPinout.html
-    edgev_gpio_pinout: EdgeVGPIOPinout.html
-    install_libreelec: InstallLibreELEC.html
+  Accessories:
+    how_to_setup_fan: HowToSetupFan.html
     connect_lcd: ConnectLcd.html
-    list_of_compatible_nvme_ssd: ListOfCompatibleNVMeSSDs.html
+    how_to_use_lte_module: HowToUseLTEModule.html
   development:
-    install_toolchains: InstallToolchains.html
     setup_serial: SetupSerialTool.html
     erase_emmc: HowtoEraseEMMC.html
     how_to_access_gpio: HowToAccessGpio.html
     rk_docs: RockchipDocs.html
-    how_to_install_adb_tool: HowToInstallADBTool.html
+    howto_use_wol: HowtoUseWol.html
   uboot:
     boot_from_spi_flash: BootFromSpiFlash.html
     kbi_guidance: KbiGuidance.html
   android:
+    install_toolchains: InstallToolchains.html
     download_android_source_code: DownloadAndroidSourceCode.html
     build_android: BuildAndroid.html
-    setup_adb: SetupADB.html
-    howto_use_wol: HowtoUseWol.html
+    how_to_use_adb_tool: HowToUseADBTool.html
     instructions_for_edge_single_pack_burning_tool: InstructionsforEdgeSinglePackBurningTool.html
   linux:
     fenix_script: FenixScript.html
+    how_to_upgrade_the_system: HowToUpgradeTheSystem.html
     krescue: Krescue.html
-    how_to_connect_wifi: HowToConnectWifi.html
-    how_to_setup_bluetooth: HowToSetupBluetooth.html
-    add_chinese_support: AddChineseSupport.html
-    how_to_setup_fan: HowToSetupFan.html
-    install_tensorflow: InstallTensorFlow.html
     install_docker: InstallDocker.html
     build_packages_in_docker: BuildPackagesInDocker.html
-    setup_golang: SetupGolang.html
-    enable_adb: HowtoEnableAdb.html
     how_to_use_wiringpi: HowToUseWiringPi.html
     how_to_use_rpigpio: HowToUseRPiGPIO.html
     how_to_upgrade_the_logo: HowToUpgradeTheLogo.html
     how_to_upgrade_the_uboot: HowToUpgradeTheUboot.html
     how_to_upgrade_the_kernel: HowToUpgradeTheKernel.html
-  hardware:
-    download: HardwareDocs.html
-    extra: HardwareExtra.html
-  firmware:
-    android_image: FirmwareAndroid.html
-    ubuntu_image: FirmwareUbuntu.html
-    debian_image: FirmwareDebian.html
-    libreelec_image: FirmwareLibreelec.html
-    dualos_image: FirmwareDualos.html
-    buildroot_image: FirmwareBuildroot.html
-    uboot_image: FirmwareUboot.html
-    thirdparty_image: FirmwareThirdparty.html
+    how_to_control_LED: HowToControlLED.html
+    how_to_test_gpio_irq: HowToTestGPIOIRQ.html
+    how_to_set_auto_login: HowToSetAutoLogin.html
+    how_to_use_1-Wire: HowToUse1wire.html
+    how_to_setup_fb_font: HowToSetupFramebufferConsoleFont.html
+    how_to_write_SD_image_to_eMMC: HowToWriteSDImageToEmmc.html
 
-toneboard:
+tone1:
   getting_started:
     overview: index.html
     user_manual: UserManual.html
     how_to_upgrade_firmware: HowtoUpgradeFirmware.html
-  hardware:
-    download: HardwareDocs.html
 
+hardware:
+  hardware:
+    vim1: hardwareVim1.html
+    vim2: hardwareVim2.html
+    vim3: hardwareVim3.html
+    edge: hardwareEdge.html
+    tone1: hardwareTone1.html
+    
 firmware:
-  firmware_download:
-    vim1: index.html
+  firmware:
+    vim1: Vim1Firmware.html 
     vim2: Vim2Firmware.html
+    vim3: Vim3Firmware.html
     edge: EdgeFirmware.html
