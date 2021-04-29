@@ -1,10 +1,29 @@
 title: VIM1 Beginners Guide
 ---
 
-# VIM1
+## VIM1
 ![image](/images/vim1/docs_vim1.jpg)
 
-## Front (Blue)
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="front-tab" data-toggle="tab" href="#front-vim1" role="tab" aria-controls="front" aria-selected="true">Front(Blue)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="back-tab" data-toggle="tab" href="#back-vim1" role="tab" aria-controls="back" aria-selected="false">BACK(RED)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="button-tab" data-toggle="tab" href="#button-vim1" role="tab" aria-controls="button" aria-selected="false">BUTTONS</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="led-tab" data-toggle="tab" href="#led-vim1" role="tab" aria-controls="led" aria-selected="false">Indicator LEDs</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="gpio-tab" data-toggle="tab" href="#gpio-vim1" role="tab" aria-controls="gpio" aria-selected="false">GPIO Pinout</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="front-vim1" role="tabpanel" aria-labelledby="front-tab">
+
 ||Component|Purpose|
 |---:|:---|:---|
 |1|USB-A|USB 2.0 speed, 500mA max output|
@@ -22,16 +41,18 @@ title: VIM1 Beginners Guide
 |D|Infrared Module|2-channel infrared receiver for use with [Khadas IR remote](https://www.khadas.com/product-page/ir-remote)|
 |E|LEDs|Status indicator LEDs|
 |F|I-Pex [Wi-Fi](/vim1/HowToConnectWifi.html) / [Bluetooth](/vim1/HowToSetupBluetooth.html) Connector|Wi-Fi / BT Antenna connector|
+</div>
+<div class="tab-pane fade" id="back-vim1" role="tabpanel" aria-labelledby="back-tab">
 
-## Back (Red)
 ||Component|Purpose|
 |---:|:---|:---|
 |1|[VIN](https://www.khadas.com/product-page/vin-to-vin-cable)|5V power input|
 |2|[Micro-SD Card Slot](/vim1/BootFromExtMedia.html)|Boot alternative OSes via a Micro-SD card, and for extra storage|
 |3|M-Register|Allows the EMMC to [enter MaskROM mode](/vim1/HowtoBootIntoUpgradeMode.html)|
 |4|XPWR Pads|Connect an external power switch using these pads|
+</div>
+<div class="tab-pane fade" id="button-vim1" role="tabpanel" aria-labelledby="button-tab">
 
-## Buttons
 |Reset|Function|Power|Purpose|
 |:---:|:---:|:---:|:---|
 |x|||Force Reboot VIM1
@@ -39,8 +60,9 @@ title: VIM1 Beginners Guide
 |||x|Power On/Wake Up VIM1|
 |x||x|[Enter Upgrade Mode (KEYS)](/vim1/HowtoBootIntoUpgradeMode.html)|
 |x|x|x|[Erase EMMC](/vim1/HowtoEraseEMMC.html)|
+</div>
+<div class="tab-pane fade" id="led-vim1" role="tabpanel" aria-labelledby="led-tab">
 
-## Indicator LEDs
 |Colour|Behaviour|Meaning|
 |---:|:---:|:---|
 |Blue|OFF|Power source disconnected|
@@ -50,20 +72,24 @@ title: VIM1 Beginners Guide
 |Red|None|None|
 
 The above behaviours are default out-of-the-box, and can be altered by a user. For example the white LED can be made to blink or breathe. For more information on how to program them via your favourite OS (each OS is different), please consult with experts at [forum.khadas.com](https://forum.khadas.com).
-
-## GPIO Pin-Out
+</div>
+<div class="tab-pane fade" id="gpio-vim1" role="tabpanel" aria-labelledby="gpio-tab">
 
 ![Image of Vim GPIO](/images/vim1/vim_pinout.png)
+</div>
+</div> 
 
 
-**Notice**:
+{% note info Notice %}
 
 * `PIN17-20`: for UART debugging
 * `PIN29-33`: iomux for I2S
 * `PIN36`   : 32.768KHz clock output
 * `PIN38`   : enable signal for whole system power
 
-# Krescue (Khadas-Rescue-OS)
+{% endnote %}
+
+## Krescue (Khadas Rescue OS)
 ![image](/images/docs_krescue_online_install.jpg)
 
 [Krescue](https://dl.khadas.com/Firmware/Krescue/dump/README.txt) is an extremely small (21mb) operating system that you can boot directly from a micro-SD card or your EMMC. It is a "Swiss Army knife", and you can use it to perform a variety of low-level SBC maintenance tasks. Most notable of which are backing-up your EMMC by dumping a raw-compressed .img.gz, and rapidly installing a new OS via flashing a .img.gz back into the EMMC. As of January 2020, Krescue can download and install OS images directly from the web via wired Ethernet.
@@ -103,7 +129,7 @@ More shell commands and examples:
 - [YouTube - Krescue Online OS Installation](https://youtu.be/vvpkbhnyhZY)
 - [Khadas Forum - Krescue Help & Discussion](https://forum.khadas.com/t/krescue-take-full-control-of-your-vim-device/5945)
 
-# VIM1 Power Supply
+## VIM1 Power Supply
 Although your VIM1 SBC is compatible with various types of power supplies, these are the recommended specs for the best performance-output and stability.
 
 1. 5V, 2000mA Power Adapter
@@ -115,7 +141,7 @@ Although your VIM1 SBC is compatible with various types of power supplies, these
 * [Extra Power Input For Khadas VIMs](/vim1/ExtraPowerInput.html)
 * [Khadas VIM Specifications](https://www.khadas.com/vim)
 
-# Displays & User Input
+## Displays & User Input
 These items are useful when you need to connect your VIM1 SBC to an external display + keyboard mouse + remote control, for use as a desktop computer or media center.
 
 1. 4K HDMI 2.0 Cable
@@ -123,14 +149,16 @@ These items are useful when you need to connect your VIM1 SBC to an external dis
 3. Wireless USB Keyboard + Mouse
 4. CeC-Compatible Remote Control
 
-```Note: Please do not attach multiple cables with large heads that interfere with each other, as that may bend or twist the connectors, and this will cause intermittent connectivity issues after some time.```
+{% note warn Note %}
+Please do not attach multiple cables with large heads that interfere with each other, as that may bend or twist the connectors, and this will cause intermittent connectivity issues after some time.
+{% endnote %}
 
 **Learn More:**
 * [Khadas Shop - HDMI Cable](https://www.khadas.com/product-page/hdmi-cable)
 * [Khadas Shop - Remote Control](https://www.khadas.com/product-page/ir-remote)
 * [Amazon - Wireless Keyboard + Mouse](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Delectronics&field-keywords=wireless+keyboard+and+mouse&rh=n%3A172282%2Ck%3Awireless+keyboard+and+mouse)
 
-# Making Bootable/Burning SD-Cards/Thumbdrives
+## Making Bootable / Burning SD-Cards / Thumbdrives
 These items are useful when you want to upgrade your VIM1 SBC's operating system via SD-Card or Thumbdrive (Burning Cards). Or if you want to run operating systems that can only be run from external media (Booting Cards) like LibreELEC.
 
 1. 8GB or Larger, SD-Card
@@ -149,7 +177,7 @@ These items are useful when you want to upgrade your VIM1 SBC's operating system
 * **SD/USB image** should be copied into an SD-Card, before that card is then used to reformat the eMMC storage with a new OS. For Example: Armbian, Ubuntu distributions containing the `SD_USB` mark, as well as LibreELEC and CoreELEC.
 * In order to bootup from **SD/USB images**, you need Android (V180209 or newer) or Ubuntu (V180531 or newer) running on your eMMC with Multi-Boot activated.
 
-# Upgrading eMMC Operating System Using USB-Cable
+## Upgrading eMMC Operating System Using USB-Cable
 You'll need these items if you want to use your laptop or desktop PC to upgrade your VIM1 SBC's operating system stored in its eMMC storage. For example, changing the bootup operating system from Android to Ubuntu, or installing a more exotic 3rd-party OS.
 
 1. USB-A to USB-C Data Cable (Legacy Computers)
@@ -168,7 +196,7 @@ You'll need these items if you want to use your laptop or desktop PC to upgrade 
 * [U-Boot](/vim1/FirmwareUboot.html)
 * [Third Party OSes](/vim1/FirmwareThirdparty.html)
 
-# Software Development / Advanced Crash Recovery
+## Software Development / Advanced Crash Recovery
 Extreme cases of crash-recovery will require you to use the MRegister to reset your VIM1 SBC. A USB Serial Debug Tool is also useful for developers debugging complex software issues.
 
 1. Conductive Metal Tweezers (For resetting a dead SBC via MRegister)
@@ -179,10 +207,10 @@ Extreme cases of crash-recovery will require you to use the MRegister to reset y
 * [Amazon - Metal Tweezers](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=metal+tweezers)
 * [Amazon - USB Serial Debug Tool](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=usb+serial+debug+tool&rh=i%3Aaps%2Ck%3Ausb+serial+debug+tool)
 
-# VIM1 Website
+## VIM1 Website
 For more information, please see our website, read more documentation, or visit our forum.
 * [Khadas VIM1 Homepage](https://www.khadas.com/vim)
 * [Khadas VIM1 Forum](https://forum.khadas.com/c/khadas-vim)
 
-# VIM1 Review Video
+## VIM1 Review Video
 {% youtube dLAX8nwcTvo %}

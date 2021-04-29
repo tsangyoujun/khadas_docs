@@ -1,10 +1,29 @@
 title: VIM2 Beginners Guide
 ---
 
-# VIM2
+## VIM2
 ![image](/images/vim2/docs_vim2.jpg)
 
-## Front (Blue)
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="front-tab" data-toggle="tab" href="#front-vim2" role="tab" aria-controls="front" aria-selected="true">Front(Blue)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="back-tab" data-toggle="tab" href="#back-vim2" role="tab" aria-controls="back" aria-selected="false">BACK(RED)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="button-tab" data-toggle="tab" href="#button-vim2" role="tab" aria-controls="button" aria-selected="false">BUTTONS</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="led-tab" data-toggle="tab" href="#led-vim2" role="tab" aria-controls="led" aria-selected="false">Indicator LEDs</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="gpio-tab" data-toggle="tab" href="#gpio-vim2" role="tab" aria-controls="gpio" aria-selected="false">GPIO Pinout</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="front-vim2" role="tabpanel" aria-labelledby="front-tab">
+
 ||Component|Purpose|
 |---:|:---|:---|
 |1|USB-A|USB 2.0 speed, 500mA max output|
@@ -25,8 +44,9 @@ title: VIM2 Beginners Guide
 |G|FPC Connector|10-pins, 0.5mm pitch, with I2C, IOs|
 |H|I-Pex [Wi-Fi](/vim2/HowToConnectWifi.html) / [Bluetooth](/vim2/HowToSetupBluetooth.html) Connector|Wi-Fi / BT Antenna connector|
 |I|I-Pex [Wi-Fi](/vim2/HowToConnectWifi.html) / [Bluetooth](/vim2/HowToSetupBluetooth.html) Connector|Wi-Fi / BT Antenna connector|
+</div>
+<div class="tab-pane fade" id="back-vim2" role="tabpanel" aria-labelledby="back-tab">
 
-## Back (Red)
 ||Component|Purpose|
 |---:|:---|:---|
 |1|Pogo Pads|External 5V power input, can be provided by [vTV Board](https://www.khadas.com/product-page/vtv-board) (DVB Tuner)|
@@ -39,8 +59,9 @@ title: VIM2 Beginners Guide
 |8|20-Pin Pogo Pads|USB, I2C, DVB-Bus, IOs, for docking with the [vTV Board](https://www.khadas.com/product-page/vtv-board) (DVB Tuner)|
 |9|XPWR Pads|Connect an external power switch using these pads|
 |A|900mA Fuse|Fuse for the 900mA USB port|
+</div>
+<div class="tab-pane fade" id="button-vim2" role="tabpanel" aria-labelledby="button-tab">
 
-## Buttons
 |Reset|Function|Power|Purpose|
 |:---:|:---:|:---:|:---|
 |x|||Force Reboot VIM2
@@ -48,8 +69,9 @@ title: VIM2 Beginners Guide
 |||x|Power On/Wake Up VIM2|
 |x||x|[Enter Upgrade Mode (KEYS)](/vim2/HowtoBootIntoUpgradeMode.html)|
 |x|x|x|[Erase EMMC](/vim2/HowtoEraseEMMC.html)|
+</div>
+<div class="tab-pane fade" id="led-vim2" role="tabpanel" aria-labelledby="led-tab">
 
-## Indicator LEDs
 |Colour|Behaviour|Meaning|
 |---:|:---:|:---|
 |Blue|OFF|Power source disconnected|
@@ -59,8 +81,8 @@ title: VIM2 Beginners Guide
 |Red|None|None|
 
 The above behaviours are default out-of-the-box, and can be altered by a user. For example the white LED can be made to blink or breathe. For more information on how to program them via your favourite OS (each OS is different), please consult with experts at [forum.khadas.com](https://forum.khadas.com).
-
-## GPIO Pinout
+</div>
+<div class="tab-pane fade" id="gpio-vim2" role="tabpanel" aria-labelledby="gpio-tab">
 
 SIGNAL| PIN|PIN|SIGNAL
 ---|:---|:---|:---
@@ -84,8 +106,10 @@ GND|17|37|GPIOH_5
 Linux_RX|18|38|EXP_INT
 Linux_TX|19|39|GPIODV_13
 3.3V|20|40|GND
+</div>
+</div>
 
-# Krescue (Khadas-Rescue-OS)
+## Krescue (Khadas Rescue OS)
 ![image](/images/docs_krescue_online_install.jpg)
 
 [Krescue](https://dl.khadas.com/Firmware/Krescue/dump/README.txt) is an extremely small (21mb) operating system that you can boot directly from a micro-SD card or your EMMC. It is a "Swiss Army knife", and you can use it to perform a variety of low-level SBC maintenance tasks. Most notable of which are backing-up your EMMC by dumping a raw-compressed .img.gz, and rapidly installing a new OS via flashing a .img.gz back into the EMMC. As of January 2020, Krescue can download and install OS images directly from the web via wired Ethernet.
@@ -125,7 +149,7 @@ More shell commands and examples:
 - [YouTube - Krescue Online OS Installation](https://youtu.be/vvpkbhnyhZY)
 - [Khadas Forum - Krescue Help & Discussion](https://forum.khadas.com/t/krescue-take-full-control-of-your-vim-device/5945)
 
-# VIM2 v1.4 What's New?
+## VIM2 v1.4 What's New?
 Khadas has recently upgraded their VIM2 to v1.4 which features several improvements, such as the addition of XPWR pads for an external power switch, as well as a larger 16MB SPI-flash.
 
 It also has had several components moved / upgraded to accomodate a quieter cooling system:
@@ -141,7 +165,7 @@ It is backwards-compatible with the DIY Case, vTV Board and Khadas Tone Board, a
 * [Khadas Files - VIM2 v1.4 Specifications Sheet](https://dl.khadas.com/Hardware/VIM2/Specs/Khadas_VIM2_Specs_190403.pdf)
 * [Distributor Guide - What's New In VIM2 v1.4](https://dl.khadas.com/Hardware/VIM2/Distributor/VIM2_v1.4_Whats_New.pdf)
 
-# VIM2 Power Supply
+## VIM2 Power Supply
 Although your VIM2 SBC is compatible with various types of power supplies, these are the recommended specs for the best performance-output and stability.
 
 1. 5V, 2000mA Power Adapter
@@ -153,7 +177,7 @@ Although your VIM2 SBC is compatible with various types of power supplies, these
 * [Extra Power Input For Khadas VIMs](/vim2/ExtraPowerInput.html)
 * [Khadas VIM Specifications](https://www.khadas.com/vim)
 
-# Displays & User Input
+## Displays & User Input
 These items are useful when you need to connect your VIM2 SBC to an external display + keyboard mouse + remote control, for use as a desktop computer or media center.
 
 1. 4K HDMI 2.0 Cable
@@ -168,7 +192,7 @@ These items are useful when you need to connect your VIM2 SBC to an external dis
 * [Khadas Shop - Remote Control](https://www.khadas.com/product-page/ir-remote)
 * [Amazon - Wireless Keyboard + Mouse](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Delectronics&field-keywords=wireless+keyboard+and+mouse&rh=n%3A172282%2Ck%3Awireless+keyboard+and+mouse)
 
-# Making Bootable/Burning SD-Cards/Thumbdrives
+## Making Bootable / Burning SD-Cards / Thumbdrives
 These items are useful when you want to upgrade your VIM2 SBC's operating system via SD-Card or Thumbdrive (Burning Cards). Or if you want to run operating systems that can only be run from external media (Booting Cards) like LibreELEC.
 
 1. 8GB or Larger, SD-Card
@@ -182,12 +206,15 @@ These items are useful when you want to upgrade your VIM2 SBC's operating system
 * [Boot From External Media](/vim2/BootFromExtMedia.html)
 * [Enter Upgrade Mode](/vim2/HowtoBootIntoUpgradeMode.html)
 
-**Tips:**
+{% note info Tips %}
+
 * **eMMC image** should be burned directly to the eMMC using a USB-C data cable, from a Ubuntu or Windows Host. It must not be burned into an SD-Card. For Example: Android and Ubuntu distributions containing the `EMMC` mark.
 * **SD/USB image** should be copied into an SD-Card, before that card is then used to reformat the eMMC storage with a new OS. For Example: Armbian, Ubuntu distributions containing the `SD_USB` mark, as well as LibreELEC and CoreELEC.
 * In order to bootup from **SD/USB images**, you need Android (V180209 or newer) or Ubuntu (V180531 or newer) running on your eMMC with Multi-Boot activated.
 
-# Upgrading eMMC Operating System Using USB-C Cable
+{% endnote %}
+
+## Upgrading eMMC Operating System Using USB-C Cable
 You'll need these items if you want to use your laptop or desktop PC to upgrade your VIM2 SBC's operating system stored in its eMMC storage. For example, changing the bootup operating system from Android to Ubuntu, or installing a more exotic 3rd-party OS.
 
 1. USB-A to USB-C Data Cable (Legacy Computers)
@@ -206,7 +233,7 @@ You'll need these items if you want to use your laptop or desktop PC to upgrade 
 * [U-Boot](/vim2/FirmwareUboot.html)
 * [Third Party OSes](/vim2/FirmwareThirdparty.html)
 
-# Watching Movies, Expanding Internal eMMC Storage
+## Watching Movies, Expanding Internal eMMC Storage
 These items are useful if you wish to use your VIM2 SBC as a media center, for storing/downloading large movie files. A microSDXC UHS-I card is expensive, but its also fast enough for 4K video playback. In addition, you can connect external USB-2.0/3.0 SSDs or HDDs for storage that can encompass your entire media library.
 
 1. 64GB or larger, USB-2.0/3.0 HDD / SSD
@@ -216,9 +243,13 @@ These items are useful if you wish to use your VIM2 SBC as a media center, for s
 * [Amazon - Samsung T5 Portable SSD](https://www.amazon.com/Samsung-T5-Portable-SSD-MU-PA1T0B/dp/B073H552FJ/ref=sr_1_1_sspa?ie=UTF8&qid=1543995277&sr=8-1-spons&keywords=external+usb+ssd&psc=1)
 * [Amazon - microSDXC UHS-I SD-Card](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=microSDXC+UHS-I&rh=i%3Aaps%2Ck%3AmicroSDXC+UHS-I)
 
-**Tip:** Nowadays most people stream their media, see [How To Install LibreELEC](/vim2/InstallLibreELEC.html).
+{% note info Tips %}
 
-# Software Development / Advanced Crash Recovery
+Nowadays most people stream their media, see [How To Install LibreELEC](/vim2/InstallLibreELEC.html).
+
+{% endnote %}
+
+## Software Development / Advanced Crash Recovery
 Extreme cases of crash-recovery will require you to use the MRegister to reset your VIM2 SBC. A USB Serial Debug Tool is also useful for developers debugging complex software issues.
 
 1. Your fingers (for resetting a dead SBC via Khadas-TST, VIM2 V14 only)
@@ -231,11 +262,11 @@ Extreme cases of crash-recovery will require you to use the MRegister to reset y
 * [Amazon - Metal Tweezers](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=metal+tweezers)
 * [Amazon - USB Serial Debug Tool](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=usb+serial+debug+tool&rh=i%3Aaps%2Ck%3Ausb+serial+debug+tool)
 
-# VIM2 Website
+## VIM2 Website
 For more information, please see our website, read more documentation, or visit our forum.
 * [Khadas VIM2 Homepage](https://www.khadas.com/vim)
 * [Khadas VIM2 Forum](https://forum.khadas.com/c/Khadas-VIM2)
 
-# VIM2 Review Video
+## VIM2 Review Video
 {% youtube FZX6c8o5kzo %}
 

@@ -1,24 +1,24 @@
 title: 如何连接TS050触摸屏
 ---
 
-# 1.简介
+## 1.简介
 
 Edge-V开发板外置了3个LCD屏接口：HDMI + MIPI + EDP。接口对应板子上的位置如下图：
 
-![C|690x252](/images/edge/edge-v_display_interfaces.jpg) 
+<img src="/images/edge/edge-v_display_interfaces.jpg" width="70%" height="70%" >
 
 Edge开发板外置了2个LCD屏接口：HDMI + DP。接口对应板子上的位置如下图：
 
-![image|618x500](/images/edge/edge_display_interfaces.jpg)  
+<img src="/images/edge/edge_display_interfaces.jpg" width="50%" height="50%" >
 
 Captain开发板外置了2个LCD屏接口：EDP + MIPI。接口对应板子上的位置如下图：
 
-![image|573x479](/images/edge/captain_display_interfaces.jpg) 
+<img src="/images/edge/captain_display_interfaces.jpg" width="50%" height="50%" >
 
-# 2.（HDMI + DP）屏幕配置
-##  2.1配置 **dts**
+## 2.（HDMI + DP）屏幕配置
+###  2.1配置 **dts**
 rk3399-khadas-edge.dtsi为例介绍：HDMI(主显) + DP（副显）
-### 2.1.1 使能对应显示设备节点
+#### 2.1.1 使能对应显示设备节点
 ```sh
 &hdmi {
 	status = "okay";
@@ -36,7 +36,7 @@ rk3399-khadas-edge.dtsi为例介绍：HDMI(主显) + DP（副显）
 	phys = <&tcphy0_dp>;
 };
 ```
-### 2.1.2 绑定 VOP
+#### 2.1.2 绑定 VOP
 RK3399平台存在两个 VOP：vopb（支持 4K）、vopl（只支持 2K）， 当显示设备节点打开时，显示接口对应 vopb 和 vopl 的 ports 都会打开，需要关闭用不到的那个VOP。
 ```sh
 &hdmi_in_vopb {
@@ -55,7 +55,7 @@ RK3399平台存在两个 VOP：vopb（支持 4K）、vopl（只支持 2K）， �
 	status = "okay";
 };
 ```
-### 2.1.3 开机 logo
+#### 2.1.3 开机 logo
 如果 uboot logo 未开启，那 kernel 阶段也无法显示开机 logo，只能等到 android 启动后
 才能看到显示。在 dts 里面将对应的 route 使能即可打开 uboot logo 支持，比如打开 hdmi 的
 uboot logo 显示:
@@ -65,7 +65,7 @@ uboot logo 显示:
 	connect = <&vopb_out_hdmi>;
 };
 ```
-### 2.1.4 绑定 PLL
+#### 2.1.4 绑定 PLL
 rk3399 的 hdmi 所绑定的 vop 时钟需要挂载到 vpll 上，若是双显需将另一个 vop 时钟挂到
 cpll 这样可以分出任意 dclk 的频率。
 如当 hdmi 绑定到 vopb 时配置：
@@ -90,7 +90,7 @@ cpll 这样可以分出任意 dclk 的频率。
 	assigned-clock-parents = <&cru PLL_VPLL>;
 };
 ```
-### 2.1.5 打开音频
+#### 2.1.5 打开音频
 ```sh
 &dp_sound {
 	status = "okay";
@@ -100,8 +100,8 @@ cpll 这样可以分出任意 dclk 的频率。
 	status = "okay";
 };
 ```
-##  2.2 主副显示器配置
-### android 9.0配置
+###  2.2 主副显示器配置
+#### android 9.0配置
 device/rockchip/rk3399/rk3399.mk
 ```sh
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -110,7 +110,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	#vendor.hwc.device.extend=DSI
     #vendor.hwc.device.extend=eDP
 ```
-### android 7.1配置
+#### android 7.1配置
 device/rockchip/rk3399/rk3399_all.mk
 ```sh
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -120,11 +120,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     #sys.hwc.device.extend=eDP
 ```
 
-# 3.（MIPI + HDMI）屏幕配置
-![TS050 and Edge-V](/images/edge/edge_v_ts050.jpg)
-##  3.1配置 **dts**
+## 3.（MIPI + HDMI）屏幕配置
+<img src="/images/edge/edge_v_ts050.jpg" width="50%" height="50%" >
+
+###  3.1配置 **dts**
+
 rk3399-khadas-edge-mipi-android.dtsi为例介绍：MIPI(主显) + HDMI（副显）
-### 3.1.1 使能对应显示设备节点
+
+#### 3.1.1 使能对应显示设备节点
+
 ```sh
 &hdmi {
 	status = "okay";
@@ -144,7 +148,7 @@ rk3399-khadas-edge-mipi-android.dtsi为例介绍：MIPI(主显) + HDMI（副显�
     status = "okay";
 };
 ```
-### 3.1.2 绑定 VOP
+#### 3.1.2 绑定 VOP
 RK3399平台存在两个 VOP：vopb（支持 4K）、vopl（只支持 2K）， 当显示设备节点打开时，显示接口对应 vopb 和 vopl 的 ports 都会打开，需要关闭用不到的那个VOP。
 ```sh
 &dp_in_vopl {
@@ -171,7 +175,7 @@ RK3399平台存在两个 VOP：vopb（支持 4K）、vopl（只支持 2K）， �
 	status = "okay";
 };
 ```
-### 3.1.3 开机 logo
+#### 3.1.3 开机 logo
 如果 uboot logo 未开启，那 kernel 阶段也无法显示开机 logo，只能等到 android 启动后
 才能看到显示。在 dts 里面将对应的 route 使能即可打开 uboot logo 支持，比如打开 hdmi 的
 uboot logo 显示:
@@ -186,7 +190,7 @@ uboot logo 显示:
 	connect = <&vopb_out_dsi>;
 };
 ```
-### 3.1.4 绑定 PLL
+#### 3.1.4 绑定 PLL
 rk3399 的 hdmi 所绑定的 vop 时钟需要挂载到 vpll 上，若是双显需将另一个 vop 时钟挂到
 cpll 这样可以分出任意 dclk 的频率。
 如当 hdmi 绑定到 vopb 时配置：
@@ -211,7 +215,7 @@ cpll 这样可以分出任意 dclk 的频率。
 	assigned-clock-parents = <&cru PLL_VPLL>;
 };
 ```
-### 3.1.5 打开音频
+#### 3.1.5 打开音频
 ```sh
 &dp_sound {
 	status = "disabled";
@@ -221,7 +225,7 @@ cpll 这样可以分出任意 dclk 的频率。
 	status = "okay";
 };
 ```
-### 3.1.6 配置 **timing**
+#### 3.1.6 配置 **timing**
 ```sh
 &dsi {
     status = "okay";
@@ -279,7 +283,7 @@ cpll 这样可以分出任意 dclk 的频率。
 ![image|690x429,75%](/images/edge/timing_attribute_reference_figure.png)  
 ![2|379x500,100%](/images/edge/timing_attribute_reference_figure_2.png) 
 
-### 3.1.7 命令格式说明
+#### 3.1.7 命令格式说明
 ```sh
 		panel-exit-sequence = [
 			05 05 01 28
@@ -295,7 +299,7 @@ Set.pdf 》。Generic 命令一般应用于厂商自定义的命令。具体使�
 DCS 命 令 的 类 型 有 三 种 ： 0x05/0x15/0x39 。 Generic 命 令 的 类 型 分 为 ：
 0x03/0x13/0x23/0x29。
 
-### 3.1.8 背光 backlight
+#### 3.1.8 背光 backlight
 ```sh
 &backlight {
 	pwms = <&pwm1 0 25000 0>;
@@ -320,8 +324,8 @@ DCS 命 令 的 类 型 有 三 种 ： 0x05/0x15/0x39 。 Generic 命 令 的 �
 ```
 pwms属性：配置PWM，MIPI屏使用的pwm输出是pwm1，25000ns是周期(40 KHz)。
 
-##  3.2 主副显示器配置
-### android 9.0配置
+###  3.2 主副显示器配置
+#### android 9.0配置
 device/rockchip/rk3399/rk3399.mk
 ```sh
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -330,7 +334,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.hwc.device.extend=HDMI-A
     #vendor.hwc.device.extend=eDP
 ```
-### android 7.1配置
+#### android 7.1配置
 device/rockchip/rk3399/rk3399_all.mk
 ```sh
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -339,15 +343,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	sys.hwc.device.extend=HDMI-A
     #sys.hwc.device.extend=eDP
 ```
-# 4.（HDMI or DP + MIPI）屏幕配置
+## 4.（HDMI or DP + MIPI）屏幕配置
 HDMI or DP + MIPI意思是，兼容 HDMI(主显) + MIPI（副显） 或 DP(主显) + MIPI（副显）两种接屏方式，但不支持同时接HDMI + DP。
-##  4.1 配置 **dts**
-### android 9.0配置
+###  4.1 配置 **dts**
+#### android 9.0配置
 见下面dts，详解见前面两章节说明：
 rk3399-khadas-edge-android.dts
 
-##  4.2 主副显示器配置
-### android 9.0配置
+###  4.2 主副显示器配置
+#### android 9.0配置
 device/rockchip/rk3399/rk3399.mk
 ```sh
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -1,10 +1,29 @@
 title: VIM2 文档
 ---
 
-# VIM2
+## VIM2
 ![image](/images/vim2/docs_vim2.jpg)
 
-## 正面(蓝色标识)
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="front-tab" data-toggle="tab" href="#front-vim2" role="tab" aria-controls="front" aria-selected="true">正面(蓝色标识)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="back-tab" data-toggle="tab" href="#back-vim2" role="tab" aria-controls="back" aria-selected="false">背面(红色)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="button-tab" data-toggle="tab" href="#button-vim2" role="tab" aria-controls="button" aria-selected="false">按键</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="led-tab" data-toggle="tab" href="#led-vim2" role="tab" aria-controls="led" aria-selected="false">LED灯指示</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="gpio-tab" data-toggle="tab" href="#gpio-vim2" role="tab" aria-controls="gpio" aria-selected="false">GPIO管脚映射</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="front-vim2" role="tabpanel" aria-labelledby="front-tab">
+
 ||设备名称|描述说明|
 |---:|:---|:---|
 |1|USB-A|USB 2.0接口,最大输出电流500mA|
@@ -25,8 +44,8 @@ title: VIM2 文档
 |G|FPC控制器|10个引脚,0.5mm间距,具有I2C和IOs的功能|
 |H|天线座子|用于插[wifi](/zh-cn/vim2/HowToConnectWifi.html)和[蓝牙](/zh-cn/vim2/HowToSetupBluetooth.html)的天线|
 |I|天线座子|用于插[wifi](/zh-cn/vim2/HowToConnectWifi.html)和[蓝牙](/zh-cn/vim2/HowToSetupBluetooth.html)的天线|
-
-## 背面(红色)
+</div>
+<div class="tab-pane fade" id="back-vim2" role="tabpanel" aria-labelledby="back-tab">
 
 ||设备名称|描述说明|
 |---:|:---|:---|
@@ -40,8 +59,9 @@ title: VIM2 文档
 |8|20叫Pogo焊盘|用于[VTV板子](https://www.khadas.com/product-page/vtv-board)的USB, I2C, DVB-Bus, IOs接口|
 |9|XPWR焊盘|用于连接使用外部电源|
 |A|900mA保险丝|为900mA的USB口提供保护|
+</div>
+<div class="tab-pane fade" id="button-vim2" role="tabpanel" aria-labelledby="button-tab">
 
-## 按键
 |Reset|Function|Power|描述说明|
 |:---:|:---:|:---:|:---|
 |x|||强制重启VIM2|
@@ -49,8 +69,9 @@ title: VIM2 文档
 |||x|开机或者唤醒VIM2|
 |x||x|[进入升级模式(按键模式)](/zh-cn/vim2/HowtoBootIntoUpgradeMode.html)|
 |x|x|x|[清除EMMC](/zh-cn/vim2/HowtoEraseEMMC.html)|
+</div>
+<div class="tab-pane fade" id="led-vim2" role="tabpanel" aria-labelledby="led-tab">
 
-## LED灯指示
 |颜色|状态|含义|
 |---:|:---:|:---|
 |蓝色|关闭|电源关闭|
@@ -60,8 +81,8 @@ title: VIM2 文档
 |红灯|None|None|
 
 上述行为是默认的，用户可以更改。例如，可以使白灯闪烁或呼吸。有关如何通过所喜爱的操作系统（每个操作系统都不同）编程的更多信息可通过[forum.khadas.com](https://forum.khadas.com)咨询。
-
-## GPIO管脚映射
+</div>
+<div class="tab-pane fade" id="gpio-vim2" role="tabpanel" aria-labelledby="gpio-tab">
 
 SIGNAL| PIN|PIN|SIGNAL
 ---|:---|:---|:---
@@ -85,8 +106,11 @@ GND|17|37|GPIOH_5
 Linux_RX|18|38|EXP_INT
 Linux_TX|19|39|GPIODV_13
 3.3V|20|40|GND
+</div>
+</div>
 
-# Krescue (Khadas-Rescue-OS)
+
+## Krescue (Khadas Rescue OS)
 ![image](/images/docs_krescue_online_install.jpg)
 
 [Krescue](https://dl.khadas.com/Firmware/Krescue/dump/README.txt) 是一个非常小（21MB）的操作系统，您可以直接从micro-SD卡或EMMC启动。它就像是一把"瑞士军刀"，你可以用它来执行各种低级的SBC维修任务。其中最值得注意的是通过转储一个原始压缩的.img.gz来备份EMMC，并通过将.img.gz刷新回EMMC来快速安装新操作系统。从2020年1月起，Krescue可以通过有线以太网直接从网络下载和安装操作系统映像。
@@ -130,7 +154,7 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 - [YouTube - Krescue Online OS Installation](https://youtu.be/vvpkbhnyhZY)
 - [Khadas Forum - Krescue Help & Discussion](https://forum.khadas.com/t/krescue-take-full-control-of-your-vim-device/5945)
 
-# VIM2 电源选择
+## VIM2 电源选择
 尽管您的VIM2 SBC与各种类型的电源兼容，但这些是最佳性能输出和稳定性的推荐规格。
 
 1. 5V,2A 电源适配器
@@ -142,7 +166,7 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 * [Khadas VIMs 外部供电接口](/zh-cn/vim2/ExtraPowerInput.html)
 * [Khadas VIM 规格](https://www.khadas.com/vim)
 
-# 显示器　&& 用户输入
+## 显示器　&& 用户输入
 当您需要将VIM2 SBC连接到外部显示器+键盘鼠标+遥控器，以用作台式计算机或媒体中心时，这些选项非常有用
 
 1. 4K HDMI 2.0 的数据线
@@ -155,7 +179,7 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 [Khadas Shop - 遥控器](https://www.khadas.com/product-page/ir-remote)
 [亚马逊－无线鼠标和键盘](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Delectronics&field-keywords=wireless+keyboard+and+mouse&rh=n%3A172282%2Ck%3Awireless+keyboard+and+mouse)
 
-# 制作可引导/烧录的SD卡/U盘驱动器
+## 制作可引导 / 烧录的SD卡 / U盘驱动器
 当您想通过SD卡或U盘驱动器（烧录卡）升级VIM2 SBC的操作系统时，这些项目非常有用。或者，如果您想运行只能
 从外部Medi A（烧录卡）运行的操作系统，如LibreELEC。
 
@@ -170,12 +194,15 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 [从外部媒体介质启动系统](/zh-cn/vim2/BootFromExtMedia.html)
 [如何进入升级模式](/zh-cn/vim2/HowtoBootIntoUpgradeMode.html)
 
-**提示:**
+{% note info 提示 %}
+
 * 应使用USB-C数据线从Ubuntu或Windows主机直接将**emmc固件**刻录到`emmc`。不能将其烧录到SD卡中。例如：android和ubuntu发行版包含“emmc”标记。
 * **sd/usb固件**应复制到一张sd卡中，然后使用该卡用新操作系统重新格式化emmc存储。例如：Armbian、Ubuntu发行版包含到'sd_usb'标记，以及LibELEC。
 * 为了从**sd/usb images**启动，您需要在您的emmc上运行android或ubuntu，并激活多启动。
 
-# 使用Type-C升级EMMC系统
+{% endnote %}
+
+## 使用Type-C升级EMMC系统
 如果您想使用笔记本电脑或台式电脑升级存储在EMMC存储器中的VIM2 SBC操作系统，则需要这些项目。例如，将启动操作系统从android改为ubuntu，或者安装更具特色的第三方操作系统。
 
 1. 常见Tpye-C数据线 (传统PC)
@@ -193,7 +220,7 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 * [U-Boot](/zh-cn/vim2/FirmwareUboot.html)
 * [Third Party OSes](/zh-cn/vim2/FirmwareThirdparty.html)
 
-# 观看电影，扩展内部emmc存储
+## 观看电影，扩展内部emmc存储
 如果您希望将VIM2 SBC用作媒体中心，用于存储/下载大型电影文件，这些项目非常有用。一个microDXC的UHS-I卡很贵，但它的速度也足以支持4K视频播放。此外，您还可以连接外部USB-2.0 SSD或HDD以存储整个媒体库。
 
 1. 不小于64GB的USB-2.0 HDD/SSD
@@ -203,9 +230,13 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 * [Amazon - Samsung T5 Portable SSD](https://www.amazon.com/Samsung-T5-Portable-SSD-MU-PA1T0B/dp/B073H552FJ/ref=sr_1_1_sspa?ie=UTF8&qid=1543995277&sr=8-1-spons&keywords=external+usb+ssd&psc=1)
 * [Amzon - microSDXC UHS-I SD-Card](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=microSDXC+UHS-I&rh=i%3Aaps%2Ck%3AmicroSDXC+UHS-I)
 
-**提示:** 如今，大多数人都通过流媒体使用，可以参考[如何安装LibreELEC](/zh-cn/vim2/InstallLibreELEC.html)
+{% note info 提示 %}
 
-# 软件开发/高级CRACH恢复
+如今，大多数人都通过流媒体使用，可以参考[如何安装LibreELEC](/zh-cn/vim2/InstallLibreELEC.html)。
+
+{% endnote %}
+
+## 软件开发 / 高级CRACH恢复
 在系统完全崩溃需要手动恢复的极端情况下，需要使用mregister重置VIM2 SBC。USB串行调试工具对于开发人员调>试复杂软件问题也很有用。
 
 1. 可导电的金属镊子（用于通过mregister重置死掉的sbc）
@@ -216,11 +247,11 @@ curl -sfL dl.khadas.com/.mega | sh -s - VIM3L > /dev/mmcblk? <tab auto-complete>
 * [亚马逊－金属镊子](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=metal+tweezers)
 * [亚马逊-USB调试工具](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=usb+serial+debug+tool&rh=i%3Aaps%2Ck%3Ausb+serial+debug+tool)
 
-# VIM2相关网页
+## VIM2相关网页
 更多的相关信息，请查看我们的网页，阅读文档，或者到论坛浏览以及提问。
 * [VIM2网站首页](https://www.khadas.com/vim)
 * [VIM2论坛页](https://forum.khadas.com/c/Khadas-VIM2)
 
-# VIM2 介绍视频
+## VIM2 介绍视频
 {% youtube FZX6c8o5kzo %}
 

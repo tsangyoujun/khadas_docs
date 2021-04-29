@@ -3,16 +3,23 @@ title:  Upgrade Android Or Ubuntu Via An SD-Card
 
 Here's an example of upgrading Android.The way to upgrade Ubuntu is consistent with Android.
 
-**Note: The operation of VIM1, VIM2 and VIM3 is almost the same, so this document will take VIM1 as an example.**
+{% note info The operation of VIM1, VIM2 and VIM3 is almost the same, so this document will take VIM1 as an example. %}
 
-### Preparation:
+{% endnote %}
+
+{% note warn As the burning card only support FAT32 filesystem, because the Ubuntu desktop image size is large then 4GB, so it is not supported to burn via TF card. %}
+
+{% endnote %}
+
+
+## Preparation:
 
 * Download the [Burn Card Maker Tool](https://dl.khadas.com/Tools/Burn_card_maker_V2.0.2_20150617_en.7z) and extract it.
 * Prepare an SD-Card and a Card Reader. Your card will be formatted, so you might want to back up your data first.
 * A display/monitor that supports HDMI video-input.
 
-### Upgrading Steps:
-1. Run ‘Burn_Card_Maker.exe’ tool:
+## Upgrading Steps:
+1. Run `Burn_Card_Maker.exe` tool:
 	![Image of BurnCardMaker_Tool](/images/vim1/BurnCardMaker_Tool.png)
 2. Insert the SD-Card into your PC, it should appear as a new drive letter. Then:
 	* Select your SD-Card from the drop-down list of `Choose the disk`.

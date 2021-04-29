@@ -1,4 +1,4 @@
-title: How To Upgrade Firmware
+title: Upgrade the Firmware
 ---
 
 # Tone2 Pro - Firmware Upgrade (Windows, Linux, Mac OS)
@@ -9,6 +9,10 @@ alt="Tone2 Pro - Firmware Upgrade (Windows, Linux, Mac OS)" width="480" height="
 
 Link: [YouTube](http://www.youtube.com/watch?v=qRswdL1HPZU)
 
+{% note info Note %}
+For Mac OS users, you need to type "chmod +x ./tone_dfu_tool_macos" to create an executable firmware upgrade tool
+{% endnote %}
+
 # Tone1 - Upgrade to Official Khadas Firmware v2.00
 
 <a href="https://www.khadas.com/post/tone1-upgrade-to-official-v2-firmware
@@ -17,14 +21,28 @@ alt="Tone1 - Upgrade to Official Khadas Firmware v2.00" width="480" height="267"
 
 Link: [Khadas Blog](https://www.khadas.com/post/tone1-upgrade-to-official-v2-firmware)
 
-***
 
-# Tone1 - Upgrade On Windows (Legacy)
+# Tone1 - Upgrade to Official Khadas Firmware via legacy methods
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="win-tab" data-toggle="tab" href="#win" role="tab" aria-controls="win" aria-selected="true">Windows(Legacy)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="ubu-tab" data-toggle="tab" href="#ubu" role="tab" aria-controls="ubu" aria-selected="false">Ubuntu(Legacy)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="mac-tab" data-toggle="tab" href="#mac" role="tab" aria-controls="mac" aria-selected="false">Mac OS(Legacy)</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="win" role="tabpanel" aria-labelledby="win-tab">
 
 **Preparation:**
 
 * Download the [USB Upgrade Tool](https://dl.khadas.com/Firmware/ToneBoard/Driver/%5bOnly%20for%20some%20OS%20Upgrade%20XMOS%5d-XMOS-TUSBAudio-EVAL-V4.11.0-Setup.zip) and extract it.
-* Download the firmware `.bin` files from [this directory](https://dl.khadas.com/Firmware/ToneBoard/) and extract them. 
+* Download the firmware `.bin` files from [this directory](https://dl.khadas.com/Firmware/ToneBoard/) and extract them.
 * Connect your Tone to your PC using a USB-C data cable.
 
 ![Tone With USB-C Cable](/images/tone1/tb_fw_01.jpg)
@@ -65,7 +83,8 @@ Link: [Khadas Blog](https://www.khadas.com/post/tone1-upgrade-to-official-v2-fir
 
 * Alternatively, if you're on Windows 10, uninstall all Khadas-supplied drivers and use the native [Win10 UAC2 driver](https://docs.microsoft.com/en-us/windows-hardware/drivers/audio/usb-2-0-audio-drivers) supplied with the OS.
 
-# Tone1 - Upgrade On Ubuntu (Legacy)
+</div>
+<div class="tab-pane fade" id="ubu" role="tabpanel" aria-labelledby="ubu-tab">
 
 **Preparation:**
 
@@ -111,7 +130,9 @@ Installing tone-burn-tool...
 Done!
 ```
 
-*Note: Root privilege required.*
+{% note info Note %}
+Root privilege required.
+{% endnote %}
 
 **Upgrading:**
 
@@ -128,8 +149,10 @@ $ cd /home/*
 ```
 $ sudo tone-burn-tool -i /path/to/firmware.bin
 ```
-*Note: Upgrading will stuck at `Waiting for device to restart and enter DFU mode` for about 20 seconds, please wait patiently.*
 
+{% note info Note %}
+Upgrading will stuck at `Waiting for device to restart and enter DFU mode` for about 20 seconds, please wait patiently.
+{% endnote %}
 
 * If upgrading was done successfully, you should see:
 
@@ -151,15 +174,16 @@ $ cd /path/to/utils/tone-dfu-tool
 $ sudo ./UNINSTALL
 ```
 
-# Tone1 - Upgrade On Mac OS (Legacy)
+</div>
+<div class="tab-pane fade" id="mac" role="tabpanel" aria-labelledby="mac-tab">
 
 **Preparation:**
 
 Download the ready to use dfu tool to somewhere like:`~/Desktop`
 
 ```
-$ wget https://github.com/khadas/utils/raw/master/tone-dfu-tool/tools/macos/tone_dfu_tool
-$ chmod +x tone_dfu_tool
+$ wget https://dl.khadas.com/products/tone2/dfu_tool/tone_dfu_tool_macos
+$ chmod +x ./tone_dfu_tool_macos
 ```
 
 **Upgrading:**
@@ -181,19 +205,23 @@ VID = 0x3353, PID = 0xa002
 ... Returning device to application mode
 ```
 
-**Notes:**
-
+{% note info Note %}
 * If you get the following output when attempting to upgrade the firmware on Mac OS:
 ```
 ./tone_dfu_tool --download /path/to/Tone2_Pro_DFU_TEST201228_nothing.bin
 dyld: Library not loaded: /usr/local/lib/libusb-1.0.0.dylib
-  Referenced from: /Users/ossyx/Downloads/USB-Audio-2.0-Software-v6.1-master/sc_usb_audio/module_dfu/host/xmos_dfu_osx/./xmosdfu
+  Referenced from: /Users/username/Downloads/USB-Audio-2.0-Software-v6.1-master/sc_usb_audio/module_dfu/host/xmos_dfu_osx/./xmosdfu
   Reason: image not found
 Abort trap: 6
 ```
 * It means you need to upgrade `libusb`. You can do this by typing `brew install libusb`.
 * If typing `brew install libusb` didn't work, it means that you need to install [HomeBrew](https://brew.sh/).
 * If HomeBrew fails, you need to install Xcode Command Line Tools, type `xcode-select --install` into Terminal.
+{% endnote %}
+
+</div>
+</div>
+
 
 # See Also:
 

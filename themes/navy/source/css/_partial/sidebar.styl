@@ -1,7 +1,11 @@
 #sidebar
   width: sidebar-width
   float: left
-  padding-bottom: 200px
+  position: sticky
+  top: header-height
+  height: 75vh
+  overflow-y:auto
+  padding-bottom: 20px
   padding-top: 20px
   opacity: 0.8
   margin-left: sidebar-width * -1
@@ -10,8 +14,8 @@
     display: block
 
 .sidebar-title
-  margin-top: 10px
-  padding: 5px 0
+  margin-top: 20px
+  padding-top: 0px
   font-family: font-title
   font-weight: bold
   display: block
@@ -39,7 +43,8 @@ details[open] > summary::before
   display: block
   color: color-default
   text-decoration: none
-  padding: 7px 0
+  padding-top: 12px
+  padding-bottom: 1px;
   margin-left: 20px
   line-height: 1
   position: relative
@@ -48,7 +53,9 @@ details[open] > summary::before
   overflow: hidden
   white-space: nowrap
   &.first
-    padding-top: 20px
+    padding-top: 18px
+  &.secondary-first
+    padding-top: 14px
   &.current
     color: color-link
   &:hover

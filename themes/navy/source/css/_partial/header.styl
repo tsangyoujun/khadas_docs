@@ -2,17 +2,32 @@ header-padding-normal = 10px
 header-padding-max = 30px
 logo-size = 50px
 
+.dropdown-menu
+  padding: 0 0
+  margin: 0 0
+  border: 0.1px solid #e9e7e7
+
 #header
-  position: relative
+  background: color-navy
+  position:sticky
+  height: header-height
+  top: 0
   padding: header-padding-normal 50px
+  z-index: 9999
   @media print
     display: none
 
+.header-wrapper
+  @media screen
+    max-width: max-width
+    min-width: 100%
+
 #header-inner
   display: flex
+  background: color-navy
   flex-flow: row nowrap
   align-items: center
-  @media mq-mobile
+  @media mq-mobile-tablet
     justify-content: center
 
 #logo-wrap
@@ -41,12 +56,31 @@ logo-size = 50px
   transition: 0.2s
   font-family: font-title
   display: inline-block
-  padding: 0 15px
-  &.current
-    color: color-link-hover
+  margin: 0 15px
+  &.secondary
+    line-height: 35px
+    font-size: 70%
+    color: black
   &:hover
     opacity: 1
     color: color-link-hover
+  &.current
+    color: color-link-hover
+
+.submenu-list
+  background: #fff
+  min-width: 100%
+
+.submenu
+  text-align: center
+  &:hover
+    background: color-link-hover
+    border-radius: 5px 5px 5px 5px
+
+li.submenu:hover a.main-nav-link
+  color: white
+  &.current
+    color: white
 
 #search-input-wrap
   display: none
@@ -72,7 +106,7 @@ logo-size = 50px
 
 #lang-select-wrap
   display: none
-  padding-right: 320px
+  padding-right: 15%
   position: relative
   @media mq-normal
     display: block

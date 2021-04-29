@@ -1,8 +1,11 @@
 title: How To Use Hardware Decoding Library
 ---
-# Usage Of Hardware Decoding Library
 
-*Note: Only for linux 4.9.*
+{% note warn Only for linux 4.9. %}
+
+{% endnote %}
+
+## Upgrade Systm to Latest
 
 Please make sure you use the latest image, if not please follow [How To Upgrade The System](/vim1/HowToUpgradeTheSystem.html) to upgrade your system.
 
@@ -24,6 +27,6 @@ Read from file.
 
 https://github.com/numbqq/aml_hardware_decode_demo/tree/ionvideo
 
-### Library Source Code
+## Library Source Code
 
 Here is the source code: https://github.com/numbqq/libplayer

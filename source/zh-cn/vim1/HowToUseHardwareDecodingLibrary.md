@@ -1,8 +1,10 @@
 title: 如何使用硬件解码库
 ---
-# 如何使用硬件解码库
+{% note warn 仅支持4.9内核。%}
 
-*注意：仅仅支持4.9内核。*
+{% endnote %}
+
+## 更新系统到最新版本
 
 请确保你使用的是最新的固件，如果不是请参考[如何升级系统](/zh-cn/vim1/HowToUpgradeTheSystem.html)进行升级。
 
@@ -24,6 +26,6 @@ https://github.com/numbqq/uvc_capture_aml/tree/ionvideo
 
 https://github.com/numbqq/aml_hardware_decode_demo/tree/ionvideo
 
-### 解码库源码
+## 解码库源码
 
 解码库源码：https://github.com/numbqq/libplayer

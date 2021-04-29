@@ -1,10 +1,26 @@
 title: Edge Beginners Guide
 ---
 
-# Edge
+## Edge
 ![image](/images/edge/docs_edge_labels.jpg)
 
-## Front (Blue)
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="front-tab" data-toggle="tab" href="#front-edge" role="tab" aria-controls="front" aria-selected="true">Front(Blue)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="back-tab" data-toggle="tab" href="#back-edge" role="tab" aria-controls="back" aria-selected="false">BACK(RED)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="button-tab" data-toggle="tab" href="#button-edge" role="tab" aria-controls="button" aria-selected="false">BUTTONS</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="led-tab" data-toggle="tab" href="#led-edge" role="tab" aria-controls="led" aria-selected="false">Indicator LEDs</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="front-edge" role="tabpanel" aria-labelledby="front-tab">
+
 ||Component|Purpose|
 |---:|:---|:---|
 |1|USB-A|USB 3.0 speeds|
@@ -20,9 +36,11 @@ title: Edge Beginners Guide
 |B|I-Pex [Wi-Fi](/edge/HowToConnectWifi.html) / Bluetooth Connector|Connect Wi-Fi / Bluetooth antennas|
 |C|I-Pex Wi-Fi / [Bluetooth](/edge/HowToSetupBluetooth.html) Connector|Connect Wi-Fi / Bluetooth antennas|
 
-## Back (Red)
+</div>
+<div class="tab-pane fade" id="back-edge" role="tabpanel" aria-labelledby="back-tab">
+
 ||Component|Purpose|
-|---:|:---|:---|
+|---:|:---|:---| 
 |1|Li-Po Battery Connector|For connecting Lithium Polymer batteries|
 |2|Secondary Wi-Fi / Bluetooth Pad|Extra pad for mounting Wi-Fi / Bluetooth antennas|
 |3|Secondary Wi-Fi / Bluetooth Pad|Extra pad for mounting Wi-Fi / Bluetooth antennas|
@@ -31,7 +49,9 @@ title: Edge Beginners Guide
 |6|FPC Connector A|10-Pins, 0.5mm Pitch, UART, I2C, SPI, SDMMC, ADC, PWM, IOs. To add GPIO, use [Edge IO](https://www.khadas.com/product-page/edge-io)|
 |7|M-Register|Allows the EMMC to [enter MaskROM mode](/edge/HowtoBootIntoUpgradeMode.html)|
 
-## Buttons
+</div>
+<div class="tab-pane fade" id="button-edge" role="tabpanel" aria-labelledby="button-tab">
+
 |Reset|Function|Power|Purpose|
 |:---:|:---:|:---:|:---|
 |x|||Force Reboot Edge|
@@ -39,7 +59,9 @@ title: Edge Beginners Guide
 |||x|Power On/Wake Up Edge|
 |x||x|[Enter Upgrade Mode (KEYS)](/edge/HowtoBootIntoUpgradeMode.html)|
 
-## Indicator LEDs
+</div>
+<div class="tab-pane fade" id="led-edge" role="tabpanel" aria-labelledby="led-tab">
+
 |Colour|Behaviour|Meaning|
 |---:|:---:|:---|
 |Blue|OFF|Power source disconnected|
@@ -50,10 +72,33 @@ title: Edge Beginners Guide
 
 The above behaviours are default out-of-the-box, and can be altered by a user. For example the white LED can be made to blink or breathe. For more information on how to program them via your favourite OS (each OS is different), please consult with experts at [forum.khadas.com](https://forum.khadas.com).
 
-# Edge-V
+</div>
+</div> 
+
+
+## Edge-V
 ![image](/images/edge/docs_edge_v_labels.jpg)
 
-## Front (Blue)
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="front-tab" data-toggle="tab" href="#front-edgev" role="tab" aria-controls="front" aria-selected="true">Front(Blue)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="back-tab" data-toggle="tab" href="#back-edgev" role="tab" aria-controls="back" aria-selected="false">BACK(RED)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="button-tab" data-toggle="tab" href="#button-edgev" role="tab" aria-controls="button" aria-selected="false">BUTTONS</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="led-tab" data-toggle="tab" href="#led-edgev" role="tab" aria-controls="led" aria-selected="false">Indicator LEDs</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="gpio-tab" data-toggle="tab" href="#gpio-edgev" role="tab" aria-controls="gpio" aria-selected="false">GPIO Pinout</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="front-edgev" role="tabpanel" aria-labelledby="front-tab">
+
 ||Component|Purpose|
 |---:|:---|:---|
 |1|USB-A|USB 3.0, blue colour|
@@ -73,7 +118,9 @@ The above behaviours are default out-of-the-box, and can be altered by a user. F
 |F|I-Pex [Wi-Fi](/edge/HowToConnectWifi.html) / [Bluetooth](/edge/HowToSetupBluetooth.html) Connector|Wi-Fi / BT Antenna connector|
 |G|I-Pex [Wi-Fi](/edge/HowToConnectWifi.html) / [Bluetooth](/edge/HowToSetupBluetooth.html) Connector|Wi-Fi / BT Antenna connector|
 
-## Back (Red)
+</div>
+<div class="tab-pane fade" id="back-edgev" role="tabpanel" aria-labelledby="back-tab">
+
 ||Component|Purpose|
 |---:|:---|:---|
 |1|Li-Po Battery Connector|Connect a [Lithium Polymer battery](https://www.khadas.com/product-page/lipo-battery) with the [Juice Board](https://www.khadas.com/product-page/juice-board)|
@@ -88,7 +135,9 @@ The above behaviours are default out-of-the-box, and can be altered by a user. F
 |A|MIPI-RX/TX|Configurable, connect to [MIPI-CSI cameras](https://www.khadas.com/product-page/imx214-13mp-camera) or MIPI-DSI displays|
 |B|M-Register|Another way for entering [upgrade mode](/edge/HowtoBootIntoUpgradeMode.html)|
 
-## Buttons
+</div>
+<div class="tab-pane fade" id="button-edgev" role="tabpanel" aria-labelledby="button-tab">
+
 |Reset|Function|Power|Purpose|
 |:---:|:---:|:---:|:---|
 |x|||Force Reboot Edge-V|
@@ -96,7 +145,9 @@ The above behaviours are default out-of-the-box, and can be altered by a user. F
 |||x|Power On/Wake Up Edge-V|
 |x||x|[Enter Upgrade Mode (KEYS)](/edge/HowtoBootIntoUpgradeMode.html)|
 
-## Indicator LEDs
+</div>
+<div class="tab-pane fade" id="led-edgev" role="tabpanel" aria-labelledby="led-tab">
+
 |Colour|Behaviour|Meaning|
 |---:|:---:|:---|
 |Blue|OFF|Power source disconnected|
@@ -107,7 +158,8 @@ The above behaviours are default out-of-the-box, and can be altered by a user. F
 
 The above behaviours are default out-of-the-box, and can be altered by a user. For example the white LED can be made to blink or breathe. For more information on how to program them via your favourite OS (each OS is different), please consult with experts at [forum.khadas.com](https://forum.khadas.com).
 
-## GPIO Pinout
+</div>
+<div class="tab-pane fade" id="gpio-vim" role="tabpanel" aria-labelledby="gpio-tab">
 
 SIGNAL| PIN|PIN|SIGNAL
 ---|:---|:---|:---
@@ -132,10 +184,33 @@ Linux_RX|18|38|I2S0_LRCK_RX/GPIO3_D1
 Linux_TX|19|39|MCU_PA1
 3.3V|20|40|GND
 
-# Captain
+</div>
+</div>
+
+
+## Captain
 ![image](/images/edge/docs_captain_labels.jpg)
 
-## Front (Blue)
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="front-tab" data-toggle="tab" href="#front-captain" role="tab" aria-controls="front" aria-selected="true">Front(Blue)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="back-tab" data-toggle="tab" href="#back-captain" role="tab" aria-controls="back" aria-selected="false">BACK(RED)</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="button-tab" data-toggle="tab" href="#button-captain" role="tab" aria-controls="button" aria-selected="false">BUTTONS</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="led-tab" data-toggle="tab" href="#led-captain" role="tab" aria-controls="led" aria-selected="false">Indicator LEDs</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="gpio-tab" data-toggle="tab" href="#gpio-captain" role="tab" aria-controls="gpio" aria-selected="false">GPIO Pinout</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+<div class="tab-pane fade show active" id="front-captain" role="tabpanel" aria-labelledby="front-tab">
+
 ||Component|Purpose|
 |---:|:---|:---|
 |1|RK3399 SoC Heat Spreader|Metallic layer for reducing heat concentration|
@@ -165,17 +240,21 @@ Linux_TX|19|39|MCU_PA1
 |P|M3 Clearance Hole|For mounting and cases, such as the [Kap Case](https://www.khadas.com/product-page/kap-case)|
 |Q|M2 Threaded Stand-Off|For mounting the [Edge](https://www.khadas.com/product-page/edge)|
 
-## Back (Red)
+</div>
+<div class="tab-pane fade" id="back-captain" role="tabpanel" aria-labelledby="back-tab">
+
 ||Component|Purpose|
 |---:|:---|:---|
 |1|[M.2 Socket (PCI-E 2.1)](/edge/ListOfCompatibleNVMeSSDs.html)|Connect directly to 2280 NVMe SSDs|
-|2|External Speaker & DMIC Input FPC Connector|Connecting to an external speaker|
+|2|External Speaker & DMIC Input FPC Connector|Connecting to an external speaker| 
 |3|[M.2 2280 Stand-Off (M2 Threaded)](/edge/ListOfCompatibleNVMeSSDs.html)|Boss for securing an SSD to the Captain|
 |4|Lithium Polymer Battery Connector|Add a [2-Cell Li-Po battery](https://www.khadas.com/product-page/lipo-battery) for portable usage, see [power priority](/edge/EdgeCaptainPowerPriority.html)|
 |5|Right Function Button|User programmable button|
 |6|Left Function Button|User programmable button|
 
-## Buttons
+</div>
+<div class="tab-pane fade" id="button-captain" role="tabpanel" aria-labelledby="button-tab">
+
 |Reset|Function|Left Gamepad|Right Gamepad|Left Function|Right Function|Purpose|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---|
 |x||||||Force reboot Edge+Captain if the system freezes|
@@ -185,7 +264,9 @@ Linux_TX|19|39|MCU_PA1
 |||||x||User programmable button|
 ||||||x|User programmable button|
 
-## Indicator LEDs
+</div>
+<div class="tab-pane fade" id="led-captain" role="tabpanel" aria-labelledby="led-tab">
+
 |Colour|Behaviour|Meaning|
 |---:|:---:|:---|
 |Blue|OFF|Power source disconnected|
@@ -196,7 +277,8 @@ Linux_TX|19|39|MCU_PA1
 
 The above behaviours are default out-of-the-box, and can be altered by a user. For example the white LED can be made to blink or breathe. For more information on how to program them via your favourite OS (each OS is different), please consult with experts at [forum.khadas.com](https://forum.khadas.com).
 
-## GPIO Pinout
+</div>
+<div class="tab-pane fade" id="gpio-vim" role="tabpanel" aria-labelledby="gpio-tab">
 
 SIGNAL| PIN|PIN|SIGNAL
 ---|:---|:---|:---
@@ -221,10 +303,13 @@ Linux_RX|18|38|I2S0_LRCK_RX/GPIO3_D1
 Linux_TX|19|39|MCU_PA1
 3.3V|20|40|GND
 
-# Captain + Edge
+</div>
+</div>
+
+## Captain + Edge
 ![image](/images/edge/docs_captain_with_edge_labels.jpg)
 
-## Front (Yellow)
+* Front (Yellow)
 ||Component|Purpose|
 |---:|:---|:---|
 |1|[314-Pin "Edge Connector"](https://www.khadas.com/product-page/edge)|Data and power interface between Edge & Captain|
@@ -236,7 +321,7 @@ Linux_TX|19|39|MCU_PA1
 |7|USB-A|USB 2.0 speed|
 |9|HDMI|HDMI 2.0 and CEC|
 
-# Edge Power Supply
+## Edge Power Supply
 Although your Edge SBC is compatible with various types of power supplies, these are the recommended specs for the best performance-output and stability.
 
 ![image](/images/edge/usb-c_adapter_24w_2.jpg)
@@ -244,14 +329,16 @@ Although your Edge SBC is compatible with various types of power supplies, these
 1. Khadas USB-C 24W Power Adapter (USB Power Delivery)
 2. Khadas USB-C Cable (Male-to-Male)
 
-**Tip:** These items are now available at Khadas Shop
+{% note info Tip %}
+These items are now available at Khadas Shop
+{% endnote %}
 
 **Learn More:**
 * [Edge+Captain Power Priority](/edge/EdgeCaptainPowerPriority.html)
 * [Khadas Edge Specifications](https://khadas.com/edge)
 * [Khadas Edge Accessories](https://www.khadas.com/edge-add-ons)
 
-# Displays & User Input
+## Displays & User Input
 These items are useful when you need to connect your Edge SBC to an external display + keyboard mouse + remote control, for use as a desktop computer or media center. *Edge series SBCs have USB-C display-port capability, which allows them to connect directly to Type-C enabled 4K monitors, to exchange power, data, video, and audio over a single cable.*
 
 1. 4K HDMI 2.0 Cable
@@ -265,9 +352,12 @@ These items are useful when you need to connect your Edge SBC to an external dis
 * [Amazon - LG 4K Monitor w/ USB Type-C](https://www.amazon.com/LG-27UD88-W-LED-Lit-Monitor-Type-C/dp/B01CDYB0QS/ref=sr_1_7?ie=UTF8&qid=1543993886&sr=8-7&keywords=usb-c+compatible+monitor)
 * [Amazon - Wireless Keyboard + Mouse](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Delectronics&field-keywords=wireless+keyboard+and+mouse&rh=n%3A172282%2Ck%3Awireless+keyboard+and+mouse)
 
-```Note: Please do not attach multiple cables with large heads that interfere with each other, as that may bend or twist the connectors, and this will cause intermittent connectivity issues after some time.```
 
-# Making Bootable/Burning SD-Cards/Thumbdrives
+{% note info Note %}
+Please do not attach multiple cables with large heads that interfere with each other, as that may bend or twist the connectors, and this will cause intermittent connectivity issues after some time.
+{% endnote %}
+
+## Making Bootable / Burning SD-Cards / Thumbdrives
 These items are useful when you want to upgrade your Edge SBC's operating system via SD-Card or Thumbdrive (Burning Cards). Or if you want to run operating systems that can only be run from external media (Booting Cards) like LibreELEC.
 
 1. 8GB or Larger, SD-Card
@@ -276,17 +366,18 @@ These items are useful when you want to upgrade your Edge SBC's operating system
 4. 8GB or Larger, USB-Thumbdrive (U-Disk)
 
 **Learn More:**
-* [Booting Card Vs Burning Card](/vim1/BootingCardVsBurningCard.html)
+* [Booting Card Vs Burning Card](/edge/BootingCardVsBurningCard.html)
 * [Upgrade Using SD-Card](/edge/UpgradeViaTFBurningCard.html)
 * [Boot From External Media](/vim2/BootFromExtMedia.html)
 * [Enter Upgrade Mode](/edge/HowtoBootIntoUpgradeMode.html)
 
-**Tips:**
+{% note info Tip %}
 * **eMMC image** should be burned directly to the eMMC using a USB-C data cable, from a Ubuntu or Windows Host. It must not be burned into an SD-Card. For Example: Android and Ubuntu distributions containing the `EMMC` mark.
 * **SD/USB image** should be copied into an SD-Card, before that card is then used to reformat the eMMC storage with a new OS. For Example: Armbian, Ubuntu distributions containing the `SD_USB` mark, as well as LibreELEC and CoreELEC.
 * In order to bootup from **SD/USB images**, you need Android (V180209 or newer) or Ubuntu (V180531 or newer) running on your eMMC with Multi-Boot activated.
+{% endnote %}
 
-# Upgrading eMMC Operating System Using USB-C Cable
+## Upgrading eMMC Operating System Using USB-C Cable
 You'll need these items if you want to use your laptop or desktop PC to upgrade your Edge SBC's operating system stored in its eMMC storage. For example, changing the bootup operating system from Android to Ubuntu, or installing a more exotic 3rd-party OS.
 
 1. USB-A to USB-C Data Cable (Legacy Computers)
@@ -301,7 +392,7 @@ You'll need these items if you want to use your laptop or desktop PC to upgrade 
 * [Android OS](/edge/FirmwareAndroid.html)
 * [Ubuntu OS](/edge/FirmwareUbuntu.html)
 
-# Watching Movies, Expanding Internal eMMC Storage
+## Watching Movies, Expanding Internal eMMC Storage
 These items are useful if you wish to use your Edge-V or Edge+Captain SBC as a media center, for storing/downloading large movie files. A microSDXC UHS-I card is expensive, but its also fast enough for 4K video playback. An external NVMe M.2 socket SSD will also be large enough to contain your entire media library.
 
 1. NVMe PCIe M.2 2280 SSD
@@ -311,7 +402,7 @@ These items are useful if you wish to use your Edge-V or Edge+Captain SBC as a m
 * [Amazon - Samsung 970 EVO NVMe SSD](https://www.amazon.com/Samsung-970-EVO-500GB-MZ-V7E500BW/dp/B07BN4NJ2J/ref=sr_1_3?ie=UTF8&qid=1543993490&sr=8-3&keywords=samsung+m.2+ssd)
 * [Amazon - microSDXC UHS-I SD-Card](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=microSDXC+UHS-I&rh=i%3Aaps%2Ck%3AmicroSDXC+UHS-I)
 
-# Software Development / Advanced Crash Recovery
+## Software Development / Advanced Crash Recovery
 *Edge series SBCs are equipped with "Terry's Smart Tweezers" for crash recovery without the need for conductive metal tweezers, even when the bootloader is damaged.* Extreme cases of crash-recovery will require you to use the MRegister to reset your Edge SBC. A USB Serial Debug Tool is also useful for developers debugging complex software issues. 
 
 1. Your Fingers (For resetting a dead SBC via Terry's Smart Tweezers)
@@ -324,7 +415,7 @@ These items are useful if you wish to use your Edge-V or Edge+Captain SBC as a m
 * [Amazon - Metal Tweezers](https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=metal+tweezers)
 * [Amazon - USB Serial Debug Tool](https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=usb+serial+debug+tool&rh=i%3Aaps%2Ck%3Ausb+serial+debug+tool)
 
-# Edge Website
+## Edge Website
 For more information, please see our website, read more documentation, or visit our forum.
 * [Khadas Edge Homepage](https://www.khadas.com/edge)
 * [Khadas Edge Forum](https://forum.khadas.com/c/Khadas-Edge)
